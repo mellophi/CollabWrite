@@ -6,19 +6,15 @@ import javax.persistence.*;
 
 @Entity
 public class User extends AbstractEntity {
-// riya  chur
-    @Column(name = "username")
     private String username;
-
-    @Column(name = "password")
-    private String password;
+    private String pass;
 
     public User() {
     }
 
-    public User(String username, String password) {
+    public User(String username, String pass) {
         this.username = username;
-        this.password = password;
+        this.pass = pass;
     }
 
     public String getUsername() {
@@ -29,11 +25,11 @@ public class User extends AbstractEntity {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 }

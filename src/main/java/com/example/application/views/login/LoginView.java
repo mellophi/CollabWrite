@@ -3,7 +3,10 @@ package com.example.application.views.login;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.*;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
+import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
 import java.util.Collections;
 
@@ -20,15 +23,13 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         setAlignItems(Alignment.CENTER);
 
         login.setAction("login");
-        login.setForgotPasswordButtonVisible(false);
 
         add(
-                new H1("Tester"),
-                login,
-                new RouterLink("Sign Up", SignupView.class)
+                new H1("CollabWrite"),
+                login
         );
     }
-//rg
+
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
         if(!beforeEnterEvent.getLocation()
@@ -40,4 +41,3 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         }
     }
 }
-

@@ -9,7 +9,6 @@ import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.avatar.Avatar;
-import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -29,8 +28,6 @@ import com.example.application.views.reflect.ReflectView;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.example.application.views.login.SignupView;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -40,7 +37,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 @CssImport("./views/main/main-view.css")
 public class MainView extends AppLayout {
 
-    private  String username;
     private final Tabs menu;
     private H1 viewTitle;
 
@@ -61,26 +57,19 @@ public class MainView extends AppLayout {
         layout.add(new DrawerToggle());
         viewTitle = new H1();
         layout.add(viewTitle);
-
-        //Retrieving information about the current logged in user using spring security
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails)
-            username = ((UserDetails)principal).getUsername();
-        else
-            username = principal.toString();
-        layout.add(new Avatar(username));
-
-        layout.add(new Anchor("/logout", "Logout"));
+        layout.add(new Avatar());
+//        layout.add(new RouterLink("Login", LoginView.class), new RouterLink("Sign-Up", SignupView.class));
+        layout.add(loginAndSignUp());
         return layout;
     }
 
-//    private Component loginAndSignUp() {
-//        HorizontalLayout layout = new HorizontalLayout();
-//        layout.add(new RouterLink("Sign-Up", SignupView.class));
-//        layout.add(new RouterLink("Login", LoginView.class));
-//        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.END);
-//        return layout;
-//    }
+    private Component loginAndSignUp() {
+        HorizontalLayout layout = new HorizontalLayout();
+        layout.add(new RouterLink("Sign-Up", SignupView.class));
+        layout.add(new RouterLink("Login", LoginView.class));
+        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.END);
+        return layout;
+    }
 
     private Component createDrawerContent(Tabs menu) {
         VerticalLayout layout = new VerticalLayout();
