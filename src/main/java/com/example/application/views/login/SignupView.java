@@ -1,6 +1,7 @@
 package com.example.application.views.login;
 
 import com.example.application.backend.service.UserService;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
@@ -56,6 +57,8 @@ public class SignupView extends VerticalLayout {
         }
         else{
             userService.register(username, password1);
+            Notification.show("Registration Successfull");
+            UI.getCurrent().navigate(LoginView.class);
         }
     }
 }
