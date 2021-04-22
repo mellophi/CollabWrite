@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 public class User extends AbstractEntity {
-//riya chur
+// riya  chur
     @Column(name = "username")
     private String username;
 
