@@ -28,7 +28,7 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
                 new RouterLink("Sign Up", SignupView.class)
         );
     }
-
+//rg
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
         if(!beforeEnterEvent.getLocation()
@@ -40,3 +40,4 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         }
     }
 }
+
