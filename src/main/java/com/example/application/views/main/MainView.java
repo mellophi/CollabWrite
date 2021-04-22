@@ -9,6 +9,7 @@ import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -59,17 +60,18 @@ public class MainView extends AppLayout {
         layout.add(viewTitle);
         layout.add(new Avatar());
 //        layout.add(new RouterLink("Login", LoginView.class), new RouterLink("Sign-Up", SignupView.class));
-        layout.add(loginAndSignUp());
+
+        layout.add(new Anchor("/logout", "Logout"));
         return layout;
     }
 
-    private Component loginAndSignUp() {
-        HorizontalLayout layout = new HorizontalLayout();
-        layout.add(new RouterLink("Sign-Up", SignupView.class));
-        layout.add(new RouterLink("Login", LoginView.class));
-        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.END);
-        return layout;
-    }
+//    private Component loginAndSignUp() {
+//        HorizontalLayout layout = new HorizontalLayout();
+//        layout.add(new RouterLink("Sign-Up", SignupView.class));
+//        layout.add(new RouterLink("Login", LoginView.class));
+//        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.END);
+//        return layout;
+//    }
 
     private Component createDrawerContent(Tabs menu) {
         VerticalLayout layout = new VerticalLayout();
