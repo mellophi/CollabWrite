@@ -29,6 +29,8 @@ import com.example.application.views.reflect.ReflectView;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.example.application.views.login.SignupView;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -38,6 +40,7 @@ import com.example.application.views.login.SignupView;
 @CssImport("./views/main/main-view.css")
 public class MainView extends AppLayout {
 
+    private  String username;
     private final Tabs menu;
     private H1 viewTitle;
 
@@ -58,8 +61,14 @@ public class MainView extends AppLayout {
         layout.add(new DrawerToggle());
         viewTitle = new H1();
         layout.add(viewTitle);
-        layout.add(new Avatar());
-//        layout.add(new RouterLink("Login", LoginView.class), new RouterLink("Sign-Up", SignupView.class));
+
+        //Retrieving information about the current logged in user using spring security
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails)
+            username = ((UserDetails)principal).getUsername();
+        else
+            username = principal.toString();
+        layout.add(new Avatar(username));
 
         layout.add(new Anchor("/logout", "Logout"));
         return layout;
