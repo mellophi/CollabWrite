@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String LOGIN_FAILURE_URL = "/login?error";
     private static final String LOGIN_URL = "/login";
     private static final String LOGOUT_SUCCESS_URL = "/login";
-    private static final String LOGIN_SUCCESS_URL = "/write";
+    private static final String LOGIN_SUCCESS_URL = "/reflect";
 
     @Autowired
     UserDetailsService userDetailsService;
