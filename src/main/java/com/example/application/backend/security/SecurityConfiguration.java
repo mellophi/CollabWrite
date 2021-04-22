@@ -1,7 +1,9 @@
 package com.example.application.backend.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -9,7 +11,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -17,6 +22,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String LOGIN_FAILURE_URL = "/login?error";
     private static final String LOGIN_URL = "/login";
     private static final String LOGOUT_SUCCESS_URL = "/login";
+
+    @Autowired
+    UserDetailsService userDetailsService;
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService);
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -31,4 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .failureUrl(LOGIN_FAILURE_URL)
                 .and().logout().logoutSuccessUrl(LOGOUT_SUCCESS_URL);
     }
+
+    @Bean
+    public PasswordEncoder getPasswordEncoder() { return NoOpPasswordEncoder.getInstance(); }
 }
