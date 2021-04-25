@@ -8,14 +8,25 @@ import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails {
 
+//    private int id;
+
+
     private String username;
     private String password;
 
     public CustomUserDetails(User user){
+//        this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
     }
 
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

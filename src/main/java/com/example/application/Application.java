@@ -11,11 +11,10 @@ import org.vaadin.artur.helpers.LaunchUtil;
 /**
  * The entry point of the Spring Boot application.
  */
-@SpringBootApplication(exclude = ErrorMvcAutoConfiguration.class)
+@SpringBootApplication()
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         LaunchUtil.launchBrowserInDevelopmentMode(SpringApplication.run(Application.class, args));
     }
-
 }
