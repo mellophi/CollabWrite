@@ -21,16 +21,14 @@ import java.util.List;
 @CssImport("./views/reflect/reflect-view.css")
 public class ReflectView extends VerticalLayout {
 
-    List<Reflect> posts;
-    @Autowired
-    ReflectService reflectService;
+    private List<Reflect> posts;
+    private ReflectService reflectService;
+    private UserService userService;
 
-    @Autowired
-    UserService userService;
-
-
-    public ReflectView() {
+    public ReflectView(ReflectService reflectService, UserService userService) {
         addClassName("reflect-view");
+        this.reflectService = reflectService;
+        this.userService = userService;
 //        add(new Text("Content placeholder"));
 
         posts = reflectService.FindPosts();

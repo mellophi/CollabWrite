@@ -15,11 +15,13 @@ import java.util.Optional;
 @Service
 public class ReflectService {
 
-    @Autowired
-    ReflectRepository reflectRepository;
+    private ReflectRepository reflectRepository;
+    private UserRepository userRepository;
 
-    @Autowired
-    UserRepository userRepository;
+    public ReflectService(ReflectRepository reflectRepository, UserRepository userRepository) {
+        this.reflectRepository = reflectRepository;
+        this.userRepository = userRepository;
+    }
 
     public void SavePost(int user_id, String post){
         reflectRepository.save(new Reflect(post, user_id));

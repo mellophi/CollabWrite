@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.sql.Ref;
+
 @Route(value = "write", layout = MainView.class)
 @RouteAlias(value = "", layout = MainView.class)
 @PageTitle("Write")
@@ -28,13 +30,11 @@ public class WriteView extends VerticalLayout {
     private String user_name;
     private int user_id;
 
-    @Autowired
     ReflectService reflectService;
 
-    public WriteView() {
+    public WriteView(ReflectService reflectService) {
         addClassName("write-view");
-//        name = new TextArea("Write your post");
-//        name.setSizeFull();
+        this.reflectService = reflectService;
         name = new RichTextEditor();
         name.setSizeFull();
         sayHello = new Button("Submit post");
