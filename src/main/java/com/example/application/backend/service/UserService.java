@@ -13,4 +13,8 @@ public class UserService {
     public void register(String username, String password) {
         userRepository.save(new User(username, password));
     }
+
+    public String FindByUserID(int userid){
+        return userRepository.findById(userid).get().getUsername();
+    }
 }
