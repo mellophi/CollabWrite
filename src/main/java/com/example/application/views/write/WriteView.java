@@ -49,6 +49,7 @@ public class WriteView extends VerticalLayout {
 //        Notification.show(user_name);
         user_id = reflectService.fetchUserId(user_name);
         reflectService.SavePost(user_id, name.getValue());
+        Notification.show("Post saved successfully!");
     }
 
 }
