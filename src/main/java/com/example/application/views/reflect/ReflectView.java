@@ -30,14 +30,15 @@ public class ReflectView extends VerticalLayout {
         this.reflectService = reflectService;
         this.userService = userService;
 //        add(new Text("Content placeholder"));
+        updateCardList();
+    }
 
+    public void updateCardList(){
         posts = reflectService.FindPosts();
-
         for(Reflect post : posts){
-            Card card = new Card(new Item(userService.FindByUserID(post.getUser_id()) + " on " + post.getPostDate(), post.getPost()));
+            Card card = new Card(new Item(userService.FindByUserID(post.getUser_id()) + " posted on " + post.getPostDate(), post.getPost()));
             add(card);
         }
-
     }
 
 }

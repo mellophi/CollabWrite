@@ -1,6 +1,8 @@
 package com.example.application.views.write;
 
 import com.example.application.backend.service.ReflectService;
+import com.example.application.views.reflect.ReflectView;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -30,7 +32,7 @@ public class WriteView extends VerticalLayout {
     private String user_name;
     private int user_id;
 
-    ReflectService reflectService;
+    private ReflectService reflectService;
 
     public WriteView(ReflectService reflectService) {
         addClassName("write-view");
@@ -49,10 +51,11 @@ public class WriteView extends VerticalLayout {
         else
             user_name = principal.toString();
 
-//        Notification.show(user_name);
+        Notification.show(user_name);
         user_id = reflectService.fetchUserId(user_name);
         reflectService.SavePost(user_id, name.getValue());
         Notification.show("Post saved successfully!");
+        UI.getCurrent().navigate(ReflectView.class);
     }
 
 }
