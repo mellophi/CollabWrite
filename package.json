@@ -8,7 +8,6 @@
     "@vaadin/vaadin-accordion": "1.2.0",
     "@vaadin/vaadin-app-layout": "2.2.0",
     "@vaadin/vaadin-avatar": "1.0.4",
-    "@vaadin/vaadin-board": "2.2.0",
     "@vaadin/vaadin-button": "2.4.0",
     "@vaadin/vaadin-charts": "6.3.1",
     "@vaadin/vaadin-checkbox": "2.5.0",
@@ -32,7 +31,6 @@
     "@vaadin/vaadin-login": "1.2.0",
     "@vaadin/vaadin-lumo-styles": "1.6.0",
     "@vaadin/vaadin-material-styles": "1.3.2",
-    "@vaadin/vaadin-menu-bar": "1.2.2",
     "@vaadin/vaadin-notification": "1.6.1",
     "@vaadin/vaadin-ordered-layout": "1.4.0",
     "@vaadin/vaadin-progress-bar": "1.3.0",
@@ -124,6 +122,6 @@
       "ts-loader": "8.0.12",
       "typescript": "4.0.3"
     },
-    "hash": "ae0e26b04714ad589e8c977dd1e6c6635ea9761fd596c25108e91a83c2ee0743"
+    "hash": "937e82e8cb8c004e1f6ff27abbc163cf777c2ca740af5abb8cb004e161a1afb7"
   }
 }
