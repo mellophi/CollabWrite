@@ -49,6 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    // all the type of resources which spring security should allow to be loaded in the webpage after authentication is done
     public void configure(WebSecurity web) {
         web.ignoring().antMatchers(
                 // Vaadin Flow static resources
@@ -76,5 +77,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
+    // The password saved in our database is not encrypted so No Password Encoder required
     public PasswordEncoder getPasswordEncoder() { return NoOpPasswordEncoder.getInstance(); }
 }

@@ -13,13 +13,13 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
     LoginForm login = new LoginForm();
 
     public LoginView(){
-        addClassName("login-view");
+        addClassName("login-view");     // creating css class
         setSizeFull();
 
         setJustifyContentMode(JustifyContentMode.CENTER);
         setAlignItems(Alignment.CENTER);
 
-        login.setAction("login");
+        login.setAction("login");   // Sets the path where to send the form-data when a form is submitted
         login.setForgotPasswordButtonVisible(false);
 
         add(
@@ -30,6 +30,7 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
     }
 
     @Override
+    //BeforeEnterObserver triggers an event before showing the page which is to be opened .
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
         if(!beforeEnterEvent.getLocation()
                 .getQueryParameters()

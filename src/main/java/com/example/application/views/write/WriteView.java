@@ -22,7 +22,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.sql.Ref;
 
 @Route(value = "write", layout = MainView.class)
-@RouteAlias(value = "", layout = MainView.class)
 @PageTitle("Write")
 @CssImport("./views/write/write-view.css")
 public class WriteView extends VerticalLayout {
@@ -45,13 +44,12 @@ public class WriteView extends VerticalLayout {
     }
 
     private void submitPost() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();  // get the credentials of logged in user
         if(principal instanceof UserDetails)
             user_name = ((UserDetails)principal).getUsername();
         else
             user_name = principal.toString();
 
-        Notification.show(user_name);
         user_id = reflectService.fetchUserId(user_name);
         reflectService.SavePost(user_id, name.getHtmlValue());
         Notification.show("Post saved successfully!");

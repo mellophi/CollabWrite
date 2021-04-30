@@ -23,11 +23,12 @@ public class SignupView extends VerticalLayout {
     PasswordField password1 = new PasswordField("Password");
     PasswordField password2 = new PasswordField("Confirm Password");
 
-    @Autowired
+
     UserService userService;
 
-    public SignupView(){
-        addClassName("sign-up-view");
+    public SignupView(UserService userService){
+        this.userService = userService;
+        addClassName("sign-up-view");  // creating a css class(adding the classname for css modification)
         setSizeFull();
 
         setJustifyContentMode(JustifyContentMode.CENTER);
@@ -58,7 +59,7 @@ public class SignupView extends VerticalLayout {
         else{
             userService.register(username, password1);
             Notification.show("Registration Successfull");
-            UI.getCurrent().navigate(LoginView.class);
+            UI.getCurrent().navigate(LoginView.class);      // After successful signup redirects to login page
         }
     }
 }

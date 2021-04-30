@@ -37,7 +37,7 @@ public class ReflectView extends VerticalLayout {
     public void updateCardList(){
         posts = reflectService.FindPosts();
         for(Reflect post : posts){
-            Div div = new Div();
+            Div div = new Div();    // For using html
             div.getElement().setProperty("innerHTML", "<h3><strong>"+userService.FindByUserID(post.getUser_id())+"</strong></h3><hr>"
                                                         +post.getPost()+"<hr>"
                                                         +"<p style='font-size : 10px'><em>"+"posted on "+post.getPostDate()+"</em></p>");

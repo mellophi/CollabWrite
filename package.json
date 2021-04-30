@@ -45,7 +45,9 @@
     "@vaadin/vaadin-upload": "4.4.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "lit-element": "2.4.0",
-    "@polymer/paper-ripple": "3.0.2"
+    "@polymer/paper-ripple": "3.0.2",
+    "@vaadin/vaadin-board": "2.2.0",
+    "@vaadin/vaadin-menu-bar": "1.2.2"
   },
   "devDependencies": {
     "chokidar": "^3.5.0",
@@ -122,6 +124,6 @@
       "ts-loader": "8.0.12",
       "typescript": "4.0.3"
     },
-    "hash": "937e82e8cb8c004e1f6ff27abbc163cf777c2ca740af5abb8cb004e161a1afb7"
+    "hash": "ae0e26b04714ad589e8c977dd1e6c6635ea9761fd596c25108e91a83c2ee0743"
   }
 }
