@@ -35,7 +35,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 /**
  * The main view is a top-level placeholder for other views.
  */
-@Route("main")
+
 @PWA(name = "Tester", shortName = "Tester", enableInstallPrompt = false)
 @JsModule("./styles/shared-styles.js")
 @CssImport("./views/main/main-view.css")
