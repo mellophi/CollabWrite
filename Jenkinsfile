@@ -29,29 +29,29 @@ pipeline {
              }
          }
 
-//          stage('Step 4 Docker_Image')
-//           {
-//               steps {
-//                   script {
-//                     imageName = docker.build "jerry11/check:latest"
-//                     }
-//               }
-//           }
-//
-//          stage('Step 5 Push Docker Image')
-//         {
-//             steps {
-//                 script{
-//                   docker.withRegistry('', 'jenkins-docker') {
-//                        imageName.push()
-//                   }
-//                 }
-//             }
-//         }
-//         stage('Step 6 Ansible'){
-//             steps{
-//                 ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'deploy-docker/inventory', playbook: 'deploy-docker/deploy-image.yml', sudoUser: null
-//             }
+         stage('Step 4 Docker_Image')
+          {
+              steps {
+                  script {
+                    imageName = docker.build "spefinalproject/tester:latest"
+                    }
+              }
+          }
+
+         stage('Step 5 Push Docker Image')
+        {
+            steps {
+                script{
+                  docker.withRegistry('', 'jenkins-docker') {
+                       imageName.push()
+                  }
+                }
+            }
+        }
+        stage('Step 6 Ansible'){
+            steps{
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'deploy-docker/inventory', playbook: 'deploy-docker/deploy-image.yml', sudoUser: null
+            }
 
     }
 }

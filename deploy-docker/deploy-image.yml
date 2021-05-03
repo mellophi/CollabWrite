@@ -1,0 +1,8 @@
+---
+- name: Pull docker image of app
+  hosts: all
+  tasks:
+    - name: Pull app devops image
+      docker_image:
+        name: spefinalproject/tester
+        source: pull
