@@ -14,6 +14,7 @@ pipeline {
             steps {
 
                  sh 'mvn install -Pproduction'
+
             }
         }
          stage('Step 3 Test')
