@@ -13,7 +13,7 @@ pipeline {
          stage('Step 2 Maven') {
             steps {
 
-                 sh 'mvn clean package -Pproduction'
+                 sh 'mvn install -Pproduction'
             }
         }
          stage('Step 3 Test')
