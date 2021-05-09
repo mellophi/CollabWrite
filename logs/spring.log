@@ -1,0 +1,194 @@
+2021-05-08 20:52:49.829  INFO 10060 --- [restartedMain] com.example.application.Application      : Starting Application using Java 11.0.11 on parijat with PID 10060 (/home/parijat/Desktop/Today_Demo/spe_tester/target/classes started by parijat in /home/parijat/Desktop/Today_Demo/spe_tester)
+2021-05-08 20:52:49.851  INFO 10060 --- [restartedMain] com.example.application.Application      : No active profile set, falling back to default profiles: default
+2021-05-08 20:52:50.093  INFO 10060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-08 20:52:50.094  INFO 10060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-08 20:52:52.427  INFO 10060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-08 20:52:52.648  INFO 10060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 184 ms. Found 2 JPA repository interfaces.
+2021-05-08 20:52:56.495  INFO 10060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-08 20:52:56.514  INFO 10060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-08 20:52:56.514  INFO 10060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-05-08 20:52:56.747  INFO 10060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-08 20:52:56.747  INFO 10060 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6647 ms
+2021-05-08 20:52:56.975  INFO 10060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-08 20:52:58.033  INFO 10060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-08 20:52:58.047  INFO 10060 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6409847'
+2021-05-08 20:52:58.403  INFO 10060 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-08 20:53:01.957  INFO 10060 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 3 seconds
+2021-05-08 20:53:01.960  INFO 10060 --- [restartedMain] c.v.f.server.startup.DevModeInitializer  : Starting dev-mode updaters in /home/parijat/Desktop/Today_Demo/spe_tester folder.
+2021-05-08 20:53:01.999  INFO 10060 --- [restartedMain] dev-updater                              : Visited 120 classes. Took 26 ms.
+2021-05-08 20:53:02.006  INFO 10060 --- [restartedMain] dev-updater                              : Updated npm /home/parijat/Desktop/Today_Demo/spe_tester/package.json.
+2021-05-08 20:53:02.076  INFO 10060 --- [restartedMain] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules' and the hash in the file '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-08 20:53:02.076  INFO 10060 --- [restartedMain] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-08 20:53:02.146  INFO 10060 --- [restartedMain] dev-updater                              : Visited 15 resources. Took 69 ms.
+2021-05-08 20:53:02.231  INFO 10060 --- [restartedMain] dev-updater                              : Updated /home/parijat/Desktop/Today_Demo/spe_tester/target/frontend/generated-flow-imports.js
+2021-05-08 20:53:02.244  INFO 10060 --- [restartedMain] dev-updater                              : Visited 120 classes. Took 12 ms.
+2021-05-08 20:53:02.251  INFO 10060 --- [task-1] dev-updater                              : Updated npm /home/parijat/Desktop/Today_Demo/spe_tester/package.json.
+2021-05-08 20:53:02.265  INFO 10060 --- [task-1] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules' and the hash in the file '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-08 20:53:02.265  INFO 10060 --- [task-1] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-08 20:53:02.275  INFO 10060 --- [task-1] dev-updater                              : Visited 15 resources. Took 9 ms.
+2021-05-08 20:53:02.302  INFO 10060 --- [task-1] dev-updater                              : No js modules to update '/home/parijat/Desktop/Today_Demo/spe_tester/target/frontend/generated-flow-imports.js' file
+2021-05-08 20:53:02.304  INFO 10060 --- [task-2] dev-webpack                              : Starting webpack-dev-server
+2021-05-08 20:53:02.537  WARN 10060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [com.vaadin.flow.server.VaadinSession.springServlet] for session [E21FAA394CFB84FF296116D10158FAA7]
+2021-05-08 20:53:02.545 ERROR 10060 --- [restartedMain] o.a.catalina.session.StandardManager     : Exception loading sessions from persistent storage
+
+java.lang.ClassCastException: class [Ljava.lang.StackTraceElement; cannot be cast to class java.lang.String ([Ljava.lang.StackTraceElement; and java.lang.String are in module java.base of loader 'bootstrap')
+	at java.base/java.io.ObjectInputStream.readTypeString(ObjectInputStream.java:1759) ~[na:na]
+	at java.base/java.io.ObjectStreamClass.readNonProxy(ObjectStreamClass.java:793) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDescriptor(ObjectInputStream.java:965) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1984) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1862) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2169) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1679) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:493) ~[na:na]
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:451) ~[na:na]
+	at org.apache.catalina.session.StandardSession.doReadObject(StandardSession.java:1587) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardSession.readObjectData(StandardSession.java:1040) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.doLoad(StandardManager.java:218) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.load(StandardManager.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.session.StandardManager.startInternal(StandardManager.java:354) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5194) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:140) ~[na:na]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313) ~[spring-boot-2.4.4.jar:2.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302) ~[spring-boot-2.4.4.jar:2.4.4]
+	at com.example.application.Application.main(Application.java:18) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.4.4.jar:2.4.4]
+
+2021-05-08 20:53:02.806  INFO 10060 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-08 20:53:03.012  INFO 10060 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-05-08 20:53:03.819  INFO 10060 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-08 20:53:04.314  INFO 10060 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-05-08 20:53:04.901  INFO 10060 --- [task-2] dev-webpack                              : Running webpack to compile frontend resources. This may take a moment, please stand by...
+2021-05-08 20:53:06.262  INFO 10060 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-08 20:53:06.269  INFO 10060 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-08 20:53:06.454  INFO 10060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-08 20:53:07.322  WARN 10060 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-08 20:53:07.816  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/VAADIN/**'] with []
+2021-05-08 20:53:07.816  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/myContext/VAADIN/**'] with []
+2021-05-08 20:53:07.817  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/favicon.ico'] with []
+2021-05-08 20:53:07.817  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/robots.txt'] with []
+2021-05-08 20:53:07.817  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/manifest.webmanifest'] with []
+2021-05-08 20:53:07.817  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/sw.js'] with []
+2021-05-08 20:53:07.817  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/offline-page.html'] with []
+2021-05-08 20:53:07.817  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend/**'] with []
+2021-05-08 20:53:07.818  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-08 20:53:07.818  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es5/**'] with []
+2021-05-08 20:53:07.818  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es6/**'] with []
+2021-05-08 20:53:07.909  INFO 10060 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7defc3bf, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b2f90a5, org.springframework.security.web.header.HeaderWriterFilter@2c247529, org.springframework.security.web.authentication.logout.LogoutFilter@7cacd7c3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1297075d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d745a4a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65a46ec4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@114f34d2, org.springframework.security.web.session.SessionManagementFilter@6f361f38, org.springframework.security.web.access.ExceptionTranslationFilter@6713953a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c17b4f8]
+2021-05-08 20:53:09.129  INFO 10060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-08 20:53:09.142  INFO 10060 --- [restartedMain] com.example.application.Application      : Started Application in 21.722 seconds (JVM running for 26.436)
+2021-05-08 20:53:17.791  INFO 10060 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-08 20:53:17.791  INFO 10060 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-08 20:53:17.792  INFO 10060 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-05-08 20:53:17.922  WARN 10060 --- [http-nio-8081-exec-3] c.v.f.s.DeploymentConfigurationFactory   : Found 'webpack.config.js' in the project/working directory. Will use it for webpack dev server.
+2021-05-08 20:53:17.925  INFO 10060 --- [http-nio-8081-exec-3] c.v.f.s.DefaultDeploymentConfiguration   : 
+Vaadin is running in DEBUG MODE.
+When deploying application for production, remember to disable debug features. See more from https://vaadin.com/docs/
+2021-05-08 20:53:22.151  INFO 10060 --- [http-nio-8081-exec-3] c.vaadin.flow.spring.SpringInstantiator  : The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+2021-05-08 20:53:56.699  INFO 10060 --- [task-2] dev-webpack                              : Started webpack-dev-server. Time: 51822ms
+2021-05-08 21:05:56.578  INFO 10060 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-08 21:05:56.648  INFO 10060 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-08 21:05:56.648  INFO 10060 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-08 21:05:56.733  INFO 10060 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-08 21:06:05.623  INFO 11009 --- [restartedMain] com.example.application.Application      : Starting Application using Java 11.0.11 on parijat with PID 11009 (/home/parijat/Desktop/Today_Demo/spe_tester/target/classes started by parijat in /home/parijat/Desktop/Today_Demo/spe_tester)
+2021-05-08 21:06:05.625  INFO 11009 --- [restartedMain] com.example.application.Application      : No active profile set, falling back to default profiles: default
+2021-05-08 21:06:05.676  INFO 11009 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-08 21:06:05.677  INFO 11009 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-08 21:06:07.322  INFO 11009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-08 21:06:07.415  INFO 11009 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2021-05-08 21:06:08.255  INFO 11009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-08 21:06:08.265  INFO 11009 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-08 21:06:08.265  INFO 11009 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-05-08 21:06:08.361  INFO 11009 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-08 21:06:08.362  INFO 11009 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2684 ms
+2021-05-08 21:06:08.486  INFO 11009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-08 21:06:09.431  INFO 11009 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-08 21:06:09.436  INFO 11009 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6409847'
+2021-05-08 21:06:09.682  INFO 11009 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-08 21:06:13.248  INFO 11009 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 3 seconds
+2021-05-08 21:06:13.250  INFO 11009 --- [restartedMain] c.v.f.server.startup.DevModeInitializer  : Starting dev-mode updaters in /home/parijat/Desktop/Today_Demo/spe_tester folder.
+2021-05-08 21:06:13.299  INFO 11009 --- [restartedMain] dev-updater                              : Visited 120 classes. Took 21 ms.
+2021-05-08 21:06:13.307  INFO 11009 --- [restartedMain] dev-updater                              : Updated npm /home/parijat/Desktop/Today_Demo/spe_tester/package.json.
+2021-05-08 21:06:13.338  INFO 11009 --- [restartedMain] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules' and the hash in the file '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-08 21:06:13.339  INFO 11009 --- [restartedMain] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-08 21:06:13.352  INFO 11009 --- [restartedMain] dev-updater                              : Visited 15 resources. Took 13 ms.
+2021-05-08 21:06:13.393  INFO 11009 --- [restartedMain] dev-updater                              : Updated /home/parijat/Desktop/Today_Demo/spe_tester/target/frontend/generated-flow-imports.js
+2021-05-08 21:06:13.408  INFO 11009 --- [restartedMain] dev-updater                              : Visited 120 classes. Took 15 ms.
+2021-05-08 21:06:13.411  INFO 11009 --- [task-1] dev-updater                              : Updated npm /home/parijat/Desktop/Today_Demo/spe_tester/package.json.
+2021-05-08 21:06:13.416  INFO 11009 --- [task-1] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules' and the hash in the file '/home/parijat/Desktop/Today_Demo/spe_tester/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-08 21:06:13.417  INFO 11009 --- [task-1] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-08 21:06:13.427  INFO 11009 --- [task-1] dev-updater                              : Visited 15 resources. Took 9 ms.
+2021-05-08 21:06:13.445  INFO 11009 --- [task-1] dev-updater                              : No js modules to update '/home/parijat/Desktop/Today_Demo/spe_tester/target/frontend/generated-flow-imports.js' file
+2021-05-08 21:06:13.470  INFO 11009 --- [task-2] dev-webpack                              : Starting webpack-dev-server
+2021-05-08 21:06:13.953  INFO 11009 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-08 21:06:14.036  INFO 11009 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-05-08 21:06:14.381  INFO 11009 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-08 21:06:14.597  INFO 11009 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-05-08 21:06:15.487  INFO 11009 --- [task-2] dev-webpack                              : Running webpack to compile frontend resources. This may take a moment, please stand by...
+2021-05-08 21:06:15.913  INFO 11009 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-08 21:06:15.922  INFO 11009 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-08 21:06:15.958  INFO 11009 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-08 21:06:16.471  WARN 11009 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-08 21:06:16.773  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/VAADIN/**'] with []
+2021-05-08 21:06:16.773  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/myContext/VAADIN/**'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/favicon.ico'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/robots.txt'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/manifest.webmanifest'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/sw.js'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/offline-page.html'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend/**'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es5/**'] with []
+2021-05-08 21:06:16.774  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es6/**'] with []
+2021-05-08 21:06:16.814  INFO 11009 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6255ad49, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f0e830a, org.springframework.security.web.header.HeaderWriterFilter@5d281e51, org.springframework.security.web.authentication.logout.LogoutFilter@c7e46a7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a5b03a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d7f78cd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7145a066, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c78e587, org.springframework.security.web.session.SessionManagementFilter@4bf89ca3, org.springframework.security.web.access.ExceptionTranslationFilter@5cfaf60a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21fa813a]
+2021-05-08 21:06:17.703  INFO 11009 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-08 21:06:17.721  INFO 11009 --- [restartedMain] com.example.application.Application      : Started Application in 13.219 seconds (JVM running for 14.71)
+2021-05-08 21:06:21.929  INFO 11009 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-08 21:06:21.929  INFO 11009 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-08 21:06:21.930  INFO 11009 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-08 21:06:21.984  WARN 11009 --- [http-nio-8081-exec-1] c.v.f.s.DeploymentConfigurationFactory   : Found 'webpack.config.js' in the project/working directory. Will use it for webpack dev server.
+2021-05-08 21:06:21.986  INFO 11009 --- [http-nio-8081-exec-1] c.v.f.s.DefaultDeploymentConfiguration   : 
+Vaadin is running in DEBUG MODE.
+When deploying application for production, remember to disable debug features. See more from https://vaadin.com/docs/
+2021-05-08 21:06:51.097  INFO 11009 --- [task-2] dev-webpack                              : Started webpack-dev-server. Time: 35612ms
+2021-05-08 21:07:34.008  INFO 11009 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-08 21:07:34.012  INFO 11009 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-08 21:07:34.013  INFO 11009 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-08 21:07:34.021  INFO 11009 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
