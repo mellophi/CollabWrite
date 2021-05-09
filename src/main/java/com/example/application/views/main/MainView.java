@@ -2,6 +2,7 @@ package com.example.application.views.main;
 
 import java.util.Optional;
 
+import com.example.application.views.friend.FriendView;
 import com.example.application.views.login.LoginView;
 import com.example.application.views.login.SignupView;
 import com.vaadin.flow.component.Component;
@@ -109,7 +110,7 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        return new Tab[]{createTab("Write", WriteView.class), createTab("Reflect", ReflectView.class)};
+        return new Tab[]{createTab("Write", WriteView.class), createTab("Reflect", ReflectView.class), createTab("Friend", FriendView.class)};
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {

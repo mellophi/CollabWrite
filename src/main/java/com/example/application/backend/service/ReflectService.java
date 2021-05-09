@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
+import java.sql.Ref;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +24,8 @@ public class ReflectService {
         this.userRepository = userRepository;
     }
 
-    public void SavePost(int user_id, String post){
-        reflectRepository.save(new Reflect(post, user_id));
+    public void savePost(int user_id, String post, int latest_user_id){
+        reflectRepository.save(new Reflect(post, user_id, latest_user_id));
     }
 
     public int fetchUserId(String username) throws UsernameNotFoundException {
@@ -36,4 +37,8 @@ public class ReflectService {
     public List<Reflect> FindPosts(){
         return reflectRepository.findAll();
     }
+
+    public Optional<Reflect> findPostById(int id) { return reflectRepository.findById(id); }
+
+    public void updatePost(Reflect reflect) { reflectRepository.save(reflect); }
 }
