@@ -17,6 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,7 +55,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
             user_name = principal.toString();
 
         user_id = reflectService.fetchUserId(user_name);
-        if(reflect.get() == null){
+        if(reflect == null){
             reflectService.savePost(user_id, name.getHtmlValue(), user_id);
             Notification.show("Post saved successfully!");
         }
@@ -71,8 +72,15 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
 
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
-        reflect = reflectService.findPostById(Integer.parseInt(queryParameters.get(0)));
-        name.asHtml().setValue(reflect.get().getPost());
+        if(!beforeEnterEvent.getLocation()
+                .getQueryParameters()
+                .getParameters()
+                .getOrDefault("id", Collections.emptyList())
+                .isEmpty()){
+            List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
+            reflect = reflectService.findPostById(Integer.parseInt(queryParameters.get(0)));
+            name.asHtml().setValue(reflect.get().getPost());
+        }
+
     }
 }
