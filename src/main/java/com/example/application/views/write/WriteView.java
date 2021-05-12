@@ -2,6 +2,7 @@ package com.example.application.views.write;
 
 import com.example.application.backend.entity.Reflect;
 import com.example.application.backend.service.HistoryService;
+import com.example.application.backend.service.NotificationService;
 import com.example.application.backend.service.ReflectService;
 import com.example.application.views.reflect.ReflectView;
 import com.vaadin.flow.component.UI;
@@ -30,16 +31,17 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
     private RichTextEditor name;
     private Button sayHello;
     private String user_name;
-    private int user_id;
+    private int userId;
     private Optional<Reflect> reflect;
 
     private ReflectService reflectService;
     private HistoryService historyService;
-
-    public WriteView(ReflectService reflectService, HistoryService historyService) {
+    private NotificationService notificationService;
+    public WriteView(ReflectService reflectService, HistoryService historyService, NotificationService notificationService) {
         addClassName("write-view");
         this.reflectService = reflectService;
         this.historyService = historyService;
+        this.notificationService = notificationService;
         name = new RichTextEditor();
         name.setSizeFull();
         sayHello = new Button("Submit post");
@@ -54,17 +56,18 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
         else
             user_name = principal.toString();
 
-        user_id = reflectService.fetchUserId(user_name);
+        userId = reflectService.fetchUserId(user_name);
         if(reflect == null){
-            reflectService.savePost(user_id, name.getHtmlValue(), user_id);
+            reflectService.savePost(userId, name.getHtmlValue(), userId);
             Notification.show("Post saved successfully!");
         }
         else{
-            historyService.saveHistory(reflect.get().getPostDate(), reflect.get().getPost(), user_id, reflect.get().getId());
+            historyService.saveHistory(reflect.get().getPostDate(), reflect.get().getPost(), userId, reflect.get().getId());
             reflect.get().setPost(name.getHtmlValue());
-            reflect.get().setLatest_user_id(user_id);
+            reflect.get().setLatest_user_id(userId);
             reflect.get().setPostDate(LocalDate.now());
             reflectService.updatePost(reflect.get());
+            notificationService.saveNotification("Post edited!!", reflect.get().getUser_id(), userId, reflect.get().getId());
             Notification.show("Post updated successfully!");
         }
         UI.getCurrent().navigate(ReflectView.class);

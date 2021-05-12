@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.example.application.views.friend.FriendView;
 import com.example.application.views.login.LoginView;
 import com.example.application.views.login.SignupView;
+import com.example.application.views.notification.NotificationView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -110,7 +111,7 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        return new Tab[]{createTab("Write", WriteView.class), createTab("Reflect", ReflectView.class), createTab("Friend", FriendView.class)};
+        return new Tab[]{createTab("Write", WriteView.class), createTab("Reflect", ReflectView.class), createTab("Notifications", NotificationView.class)};
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {

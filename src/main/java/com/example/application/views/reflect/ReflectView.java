@@ -11,22 +11,17 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.QueryParameters;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.*;
 import com.example.application.views.main.MainView;
 import com.vaadin.flow.component.dependency.CssImport;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Route(value = "reflect", layout = MainView.class)
 @PageTitle("Reflect")
 @CssImport("./views/reflect/reflect-view.css")
-public class ReflectView extends VerticalLayout {
+public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
 
     @Autowired
     private WriteView writeView;
@@ -40,32 +35,41 @@ public class ReflectView extends VerticalLayout {
         this.reflectService = reflectService;
         this.userService = userService;
 //        add(new Text("Content placeholder"));
-        updateCardList();
+        updateCardList(-1);
     }
 
-    public void updateCardList(){
-        posts = reflectService.FindPosts();
-        for(Reflect post : posts){
-            Div div = new Div();    // For using html
-            div.getElement().setProperty("innerHTML", "<h3><strong>Posted by "+userService.findByUserID(post.getUser_id())+"</h3></strong> latest update by "
-                                                        +userService.findByUserID(post.getLatest_user_id())+"<hr>"
-                                                        +post.getPost()+"<hr>"
-                                                        +"<p style='font-size : 10px'><em>"+"posted on "+post.getPostDate()+"</em></p>");
-            div.getStyle().set("padding", "20px");
-            RippleClickableCard card = new RippleClickableCard(div);
-            Component layout = buttonLayout(post.getId());
-            layout.setVisible(false);
-            card.addClickListener(event -> {
-                if(layout.isVisible())
-                    layout.setVisible(false);
-                else
-                    layout.setVisible(true);
-            });
-            card.add(layout);
-            add(card);
+    public void updateCardList(int postId){
+        if(postId == -1) {
+            posts = reflectService.FindPosts();
+            for (Reflect post : posts) {
+                configureCardList(post);
+            }
+        }
+        else {
+            Reflect post = reflectService.findPostById(postId).get();
+            configureCardList(post);
         }
     }
 
+    public void configureCardList(Reflect post){
+        Div div = new Div();    // For using html
+        div.getElement().setProperty("innerHTML", "<h3><strong>Posted by " + userService.findByUserID(post.getUser_id()) + "</h3></strong> latest update by "
+                + userService.findByUserID(post.getLatest_user_id()) + "<hr>"
+                + post.getPost() + "<hr>"
+                + "<p style='font-size : 10px'><em>" + "posted on " + post.getPostDate() + "</em></p>");
+        div.getStyle().set("padding", "20px");
+        RippleClickableCard card = new RippleClickableCard(div);
+        Component layout = buttonLayout(post.getId());
+        layout.setVisible(false);
+        card.addClickListener(event -> {
+            if (layout.isVisible())
+                layout.setVisible(false);
+            else
+                layout.setVisible(true);
+        });
+        card.add(layout);
+        add(card);
+    }
 
     private Component buttonLayout(int post_id) {
         HorizontalLayout layout = new HorizontalLayout();
@@ -91,4 +95,16 @@ public class ReflectView extends VerticalLayout {
     }
 
 
+    @Override
+    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
+        if(!beforeEnterEvent.getLocation()
+                .getQueryParameters()
+                .getParameters()
+                .getOrDefault("id", Collections.emptyList())
+                .isEmpty()) {
+            List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
+            updateCardList(Integer.parseInt(queryParameters.get(0)));
+        }
+    }
 }
+
