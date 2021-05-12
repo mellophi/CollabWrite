@@ -50,6 +50,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         else {
             Reflect post = reflectService.findPostById(postId).get();
             configureCardList(post);
+
         }
     }
 
