@@ -5,6 +5,7 @@ import com.example.application.backend.repository.HistoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class HistoryService {
@@ -15,7 +16,9 @@ public class HistoryService {
         this.historyRepository = historyRepository;
     }
 
-    public void saveHistory(LocalDate post_date, String post, int user_id){
-        historyRepository.save(new History(post_date, post, user_id));
+    public void saveHistory(LocalDate post_date, String post, int user_id, int postId){
+        historyRepository.save(new History(post_date, post, user_id, postId));
     }
+
+    public List<History> findAllByPostId(int postId) { return historyRepository.findAllByPostId(postId); }
 }

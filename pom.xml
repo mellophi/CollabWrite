@@ -190,8 +190,13 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>
 
-<!--        <dependency>-->
+        <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-tomcat</artifactId>-->
 <!--        </dependency>-->
@@ -199,6 +204,7 @@
 <!--            <groupId>org.slf4j</groupId>-->
 <!--            <artifactId>slf4j-log4j12</artifactId>-->
 <!--        </dependency>-->
+
 
     </dependencies>
 

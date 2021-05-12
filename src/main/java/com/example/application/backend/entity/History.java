@@ -2,55 +2,70 @@ package com.example.application.backend.entity;
 
 import com.example.application.backend.AbstractEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
 public class History extends AbstractEntity {
 
-    private LocalDate post_date;
-    private LocalDate update_post_date = LocalDate.now();
-    private String update_post;
-    private int user_id;
+    private LocalDate postDate;
+    private LocalDate updatedPostDate = LocalDate.now();
+    private String updatedPost;
+    private int userId;
+    private int postId;
+
 
     public History() {
     }
 
-    public History(LocalDate post_date, String update_post, int user_id) {
-        this.post_date = post_date;
-        this.update_post = update_post;
-        this.user_id = user_id;
+    public History(LocalDate postDate, String updatedPost, int userId, int postId) {
+        this.postDate = postDate;
+        this.updatedPost = updatedPost;
+        this.userId = userId;
+        this.postId = postId;
     }
 
-    public LocalDate getPost_date() {
-        return post_date;
+    public LocalDate getPostDate() {
+        return postDate;
     }
 
-    public void setPost_date(LocalDate post_date) {
-        this.post_date = post_date;
+    public void setPostDate(LocalDate postDate) {
+        this.postDate = postDate;
     }
 
-    public LocalDate getUpdate_post_date() {
-        return update_post_date;
+    public LocalDate getUpdatedPostDate() {
+        return updatedPostDate;
+    }
+    public int getPostId() {
+        return postId;
     }
 
-    public void setUpdate_post_date(LocalDate update_post_date) {
-        this.update_post_date = update_post_date;
+
+
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
-    public String getUpdate_post() {
-        return update_post;
+
+    public void setUpdatedPostDate(LocalDate updatedPostDate) {
+        this.updatedPostDate = updatedPostDate;
     }
 
-    public void setUpdate_post(String update_post) {
-        this.update_post = update_post;
+    public String getUpdatedPost() {
+        return updatedPost;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public void setUpdatedPost(String updatedPost) {
+        this.updatedPost = updatedPost;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

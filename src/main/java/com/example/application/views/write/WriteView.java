@@ -60,7 +60,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
             Notification.show("Post saved successfully!");
         }
         else{
-            historyService.saveHistory(reflect.get().getPostDate(), reflect.get().getPost(), user_id);
+            historyService.saveHistory(reflect.get().getPostDate(), reflect.get().getPost(), user_id, reflect.get().getId());
             reflect.get().setPost(name.getHtmlValue());
             reflect.get().setLatest_user_id(user_id);
             reflect.get().setPostDate(LocalDate.now());

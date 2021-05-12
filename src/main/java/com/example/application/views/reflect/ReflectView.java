@@ -78,6 +78,14 @@ public class ReflectView extends VerticalLayout {
             queryParameter.put("id", parameter);
             UI.getCurrent().navigate("write", new QueryParameters(queryParameter));
         });
+
+        history.addClickListener(event -> {
+            List<String> parameter = new ArrayList<>();
+            parameter.add(String.valueOf(post_id));
+            Map<String, List<String>> queryParameter = new HashMap<>();
+            queryParameter.put("id", parameter);
+           UI.getCurrent().navigate("history", new QueryParameters(queryParameter));
+        });
         layout.add(history, edit);
         return layout;
     }
