@@ -9,7 +9,6 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
@@ -44,17 +43,17 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         if(postId == -1) {
             posts = reflectService.FindPosts();
             for (Reflect post : posts) {
-                configureCardList(post);
+                configureCardList(post, 2);
             }
         }
         else {
             Reflect post = reflectService.findPostById(postId).get();
-            configureCardList(post);
+            configureCardList(post, 3);
 
         }
     }
 
-    public void configureCardList(Reflect post){
+    public void configureCardList(Reflect post, int layoutNumber){
         Div div = new Div();    // For using html
         div.getElement().setProperty("innerHTML", "<h3><strong>Posted by " + userService.findByUserID(post.getUser_id()) + "</h3></strong> latest update by "
                 + userService.findByUserID(post.getLatest_user_id()) + "<hr>"
@@ -62,7 +61,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
                 + "<p style='font-size : 10px'><em>" + "posted on " + post.getPostDate() + "</em></p>");
         div.getStyle().set("padding", "20px");
         RippleClickableCard card = new RippleClickableCard(div);
-        Component layout = buttonLayout(post.getId());
+        Component layout = (layoutNumber == 2 ) ? twoButtonLayout(post.getId()) : threeButtonLayout(post.getId());
         layout.setVisible(false);
         card.addClickListener(event -> {
             if (layout.isVisible())
@@ -74,7 +73,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         add(card);
     }
 
-    private Component buttonLayout(int post_id) {
+    private Component twoButtonLayout(int post_id) {
         HorizontalLayout layout = new HorizontalLayout();
         Button history = new Button("History");
         Button edit = new Button("Edit");
@@ -94,6 +93,39 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
            UI.getCurrent().navigate("history", new QueryParameters(queryParameter));
         });
         layout.add(history, edit);
+        return layout;
+    }
+
+    private Component threeButtonLayout(int post_id) {
+        HorizontalLayout layout = new HorizontalLayout();
+        Button history = new Button("History");
+        Button edit = new Button("Edit");
+        Button ok = new Button("OK");
+        edit.addClickListener(event -> {
+            List<String> parameter = new ArrayList<>();
+            parameter.add(String.valueOf(post_id));
+            Map<String, List<String>> queryParameter = new HashMap<>();
+            queryParameter.put("id", parameter);
+            UI.getCurrent().navigate("write", new QueryParameters(queryParameter));
+        });
+
+        history.addClickListener(event -> {
+            List<String> parameter = new ArrayList<>();
+            parameter.add(String.valueOf(post_id));
+            Map<String, List<String>> queryParameter = new HashMap<>();
+            queryParameter.put("id", parameter);
+            UI.getCurrent().navigate("history", new QueryParameters(queryParameter));
+        });
+
+        ok.addClickListener(event -> {
+            List<String> parameter = new ArrayList<>();
+            parameter.add(String.valueOf(-1));
+            Map<String, List<String>> queryParameter = new HashMap<>();
+            queryParameter.put("id", parameter);
+            UI.getCurrent().navigate("reflect", new QueryParameters(queryParameter));
+        });
+
+        layout.add(history, edit, ok);
         return layout;
     }
 
