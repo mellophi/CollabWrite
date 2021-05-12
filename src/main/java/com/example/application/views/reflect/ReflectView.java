@@ -40,7 +40,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
     }
 
     public void updateCardList(int postId){
-        Notification.show(""+postId);
+//        Notification.show(""+postId);
         if(postId == -1) {
             posts = reflectService.FindPosts();
             for (Reflect post : posts) {
