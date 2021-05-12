@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Route("sign-up")
-@PageTitle("Sign-Up | Tester")
+@PageTitle("Sign-Up | CollabWrite")
 public class SignupView extends VerticalLayout {
     TextField username = new TextField("Username");
     PasswordField password1 = new PasswordField("Password");

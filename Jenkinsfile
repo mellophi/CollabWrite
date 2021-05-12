@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Step 1 Git') {
             steps {
-                git 'https://github.com/ParijatMoulik/tester.git'
+                git 'https://github.com/ParijatMoulik/CollabWrite.git'
 
             }
         }
@@ -30,11 +30,11 @@ pipeline {
              }
          }
 
-         stage('Step 4 Docker_Image')
+         stage('Step 4 Docker Image')
           {
               steps {
                   script {
-                    imageName = docker.build "spefinalproject/tester:latest"
+                    imageName = docker.build "spefinalproject/collabwrite:latest"
                     }
               }
           }

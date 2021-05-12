@@ -19766,3 +19766,201 @@ java.lang.ClassCastException: class java.lang.StackTraceElement cannot be cast t
 2021-05-12 23:01:02.504  INFO 5607 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2021-05-12 23:01:02.504  INFO 5607 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
 2021-05-12 23:01:02.508  INFO 5607 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2021-05-12 23:41:47.181  INFO 57806 --- [restartedMain] com.example.application.Application      : Starting Application using Java 1.8.0_292 on ayon-laptop with PID 57806 (/home/ayon/Dev/Vaadin/CollabWrite/target/classes started by ayon in /home/ayon/Dev/Vaadin/CollabWrite)
+2021-05-12 23:41:47.186  INFO 57806 --- [restartedMain] com.example.application.Application      : No active profile set, falling back to default profiles: default
+2021-05-12 23:41:47.275  INFO 57806 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-12 23:41:47.275  INFO 57806 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-12 23:41:48.185  INFO 57806 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-12 23:41:48.259  INFO 57806 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
+2021-05-12 23:41:49.037  INFO 57806 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-12 23:41:49.050  INFO 57806 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-12 23:41:49.050  INFO 57806 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-05-12 23:41:49.175  INFO 57806 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-12 23:41:49.176  INFO 57806 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1899 ms
+2021-05-12 23:41:49.336  INFO 57806 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-12 23:41:51.357  INFO 57806 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-12 23:41:51.372  INFO 57806 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6411793'
+2021-05-12 23:41:51.553  INFO 57806 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-12 23:41:56.369  INFO 57806 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 4 seconds
+2021-05-12 23:41:56.404  INFO 57806 --- [restartedMain] c.v.f.server.startup.DevModeInitializer  : Starting dev-mode updaters in /home/ayon/Dev/Vaadin/CollabWrite folder.
+2021-05-12 23:41:56.441  INFO 57806 --- [restartedMain] dev-updater                              : Visited 123 classes. Took 17 ms.
+2021-05-12 23:41:56.452  INFO 57806 --- [restartedMain] dev-updater                              : Updated npm /home/ayon/Dev/Vaadin/CollabWrite/package.json.
+2021-05-12 23:41:56.463  INFO 57806 --- [restartedMain] dev-updater                              : Running `npm install` to resolve and optionally download frontend dependencies. This may take a moment, please stand by...
+2021-05-12 23:42:18.201  INFO 57806 --- [restartedMain] dev-updater                              : Frontend dependencies resolved successfully.
+2021-05-12 23:42:18.203  INFO 57806 --- [restartedMain] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-12 23:42:18.217  INFO 57806 --- [restartedMain] dev-updater                              : Visited 15 resources. Took 14 ms.
+2021-05-12 23:42:18.275  INFO 57806 --- [restartedMain] dev-updater                              : Updated /home/ayon/Dev/Vaadin/CollabWrite/target/frontend/generated-flow-imports.js
+2021-05-12 23:42:18.286  INFO 57806 --- [restartedMain] dev-updater                              : Visited 123 classes. Took 10 ms.
+2021-05-12 23:42:18.294  INFO 57806 --- [task-1] dev-updater                              : Updated npm /home/ayon/Dev/Vaadin/CollabWrite/package.json.
+2021-05-12 23:42:18.309  INFO 57806 --- [task-1] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/ayon/Dev/Vaadin/CollabWrite/node_modules' and the hash in the file '/home/ayon/Dev/Vaadin/CollabWrite/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-12 23:42:18.309  INFO 57806 --- [task-1] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-12 23:42:18.334  INFO 57806 --- [task-1] dev-updater                              : Visited 15 resources. Took 25 ms.
+2021-05-12 23:42:18.374  INFO 57806 --- [task-1] dev-updater                              : No js modules to update '/home/ayon/Dev/Vaadin/CollabWrite/target/frontend/generated-flow-imports.js' file
+2021-05-12 23:42:18.378  INFO 57806 --- [task-2] dev-webpack                              : Starting webpack-dev-server
+2021-05-12 23:42:18.528  INFO 57806 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-12 23:42:18.644  INFO 57806 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-05-12 23:42:18.768  INFO 57806 --- [task-2] dev-webpack                              : Running webpack to compile frontend resources. This may take a moment, please stand by...
+2021-05-12 23:42:18.881  INFO 57806 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-12 23:42:19.233  INFO 57806 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-05-12 23:42:21.286  INFO 57806 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-12 23:42:21.316  INFO 57806 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-12 23:42:21.335  INFO 57806 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-12 23:42:22.376  WARN 57806 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-12 23:42:23.347  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/VAADIN/**'] with []
+2021-05-12 23:42:23.347  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/myContext/VAADIN/**'] with []
+2021-05-12 23:42:23.347  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/favicon.ico'] with []
+2021-05-12 23:42:23.347  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/robots.txt'] with []
+2021-05-12 23:42:23.348  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/manifest.webmanifest'] with []
+2021-05-12 23:42:23.348  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/sw.js'] with []
+2021-05-12 23:42:23.348  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/offline-page.html'] with []
+2021-05-12 23:42:23.348  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend/**'] with []
+2021-05-12 23:42:23.348  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-12 23:42:23.348  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es5/**'] with []
+2021-05-12 23:42:23.349  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es6/**'] with []
+2021-05-12 23:42:23.393  INFO 57806 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@785a60ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@14ef3582, org.springframework.security.web.header.HeaderWriterFilter@85e03f2, org.springframework.security.web.authentication.logout.LogoutFilter@705cd24f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@134b66d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@222311f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d5d57c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30efe4c3, org.springframework.security.web.session.SessionManagementFilter@4bb87cac, org.springframework.security.web.access.ExceptionTranslationFilter@7b2cb0e3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2797710f]
+2021-05-12 23:42:23.587  INFO 57806 --- [task-2] dev-webpack                              : Started webpack-dev-server. Time: 4820ms
+2021-05-12 23:42:24.590  INFO 57806 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-12 23:42:24.606  INFO 57806 --- [restartedMain] com.example.application.Application      : Started Application in 38.521 seconds (JVM running for 39.555)
+2021-05-12 23:42:30.845  INFO 57806 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-12 23:42:30.846  INFO 57806 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-12 23:42:30.849  INFO 57806 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-05-12 23:42:30.969  WARN 57806 --- [http-nio-8081-exec-1] c.v.f.s.DeploymentConfigurationFactory   : Found 'webpack.config.js' in the project/working directory. Will use it for webpack dev server.
+2021-05-12 23:42:30.974  INFO 57806 --- [http-nio-8081-exec-1] c.v.f.s.DefaultDeploymentConfiguration   : 
+Vaadin is running in DEBUG MODE.
+When deploying application for production, remember to disable debug features. See more from https://vaadin.com/docs/
+2021-05-12 23:42:32.496  INFO 57806 --- [http-nio-8081-exec-3] c.vaadin.flow.spring.SpringInstantiator  : The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+2021-05-12 23:43:02.908  INFO 57806 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-12 23:43:02.919  INFO 57806 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-12 23:43:02.921  INFO 57806 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-12 23:43:02.942  INFO 57806 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-12 23:43:45.975  INFO 58327 --- [restartedMain] com.example.application.Application      : Starting Application using Java 1.8.0_292 on ayon-laptop with PID 58327 (/home/ayon/Dev/Vaadin/CollabWrite/target/classes started by ayon in /home/ayon/Dev/Vaadin/CollabWrite)
+2021-05-12 23:43:45.979  INFO 58327 --- [restartedMain] com.example.application.Application      : No active profile set, falling back to default profiles: default
+2021-05-12 23:43:46.101  INFO 58327 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-12 23:43:46.102  INFO 58327 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-12 23:43:47.301  INFO 58327 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-12 23:43:47.434  INFO 58327 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 4 JPA repository interfaces.
+2021-05-12 23:43:48.712  INFO 58327 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-12 23:43:48.737  INFO 58327 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-12 23:43:48.737  INFO 58327 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-05-12 23:43:48.822  INFO 58327 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-12 23:43:48.822  INFO 58327 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2719 ms
+2021-05-12 23:43:49.128  INFO 58327 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-12 23:43:51.999  INFO 58327 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-12 23:43:52.017  INFO 58327 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6411793'
+2021-05-12 23:43:52.259  INFO 58327 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-12 23:43:57.335  INFO 58327 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 5 seconds
+2021-05-12 23:43:57.339  INFO 58327 --- [restartedMain] c.v.f.server.startup.DevModeInitializer  : Starting dev-mode updaters in /home/ayon/Dev/Vaadin/CollabWrite folder.
+2021-05-12 23:43:57.379  INFO 58327 --- [restartedMain] dev-updater                              : Visited 123 classes. Took 22 ms.
+2021-05-12 23:43:57.393  INFO 58327 --- [restartedMain] dev-updater                              : Updated npm /home/ayon/Dev/Vaadin/CollabWrite/package.json.
+2021-05-12 23:43:57.412  INFO 58327 --- [restartedMain] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/ayon/Dev/Vaadin/CollabWrite/node_modules' and the hash in the file '/home/ayon/Dev/Vaadin/CollabWrite/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-12 23:43:57.413  INFO 58327 --- [restartedMain] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-12 23:43:57.435  INFO 58327 --- [restartedMain] dev-updater                              : Visited 15 resources. Took 22 ms.
+2021-05-12 23:43:57.480  INFO 58327 --- [restartedMain] dev-updater                              : Updated /home/ayon/Dev/Vaadin/CollabWrite/target/frontend/generated-flow-imports.js
+2021-05-12 23:43:57.495  INFO 58327 --- [restartedMain] dev-updater                              : Visited 123 classes. Took 14 ms.
+2021-05-12 23:43:57.501  INFO 58327 --- [task-1] dev-updater                              : Updated npm /home/ayon/Dev/Vaadin/CollabWrite/package.json.
+2021-05-12 23:43:57.513  INFO 58327 --- [task-1] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/ayon/Dev/Vaadin/CollabWrite/node_modules' and the hash in the file '/home/ayon/Dev/Vaadin/CollabWrite/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-12 23:43:57.514  INFO 58327 --- [task-1] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-12 23:43:57.532  INFO 58327 --- [task-1] dev-updater                              : Visited 15 resources. Took 18 ms.
+2021-05-12 23:43:57.576  INFO 58327 --- [task-1] dev-updater                              : No js modules to update '/home/ayon/Dev/Vaadin/CollabWrite/target/frontend/generated-flow-imports.js' file
+2021-05-12 23:43:57.584  INFO 58327 --- [task-2] dev-webpack                              : Starting webpack-dev-server
+2021-05-12 23:43:58.180  INFO 58327 --- [task-2] dev-webpack                              : Running webpack to compile frontend resources. This may take a moment, please stand by...
+2021-05-12 23:43:58.359  INFO 58327 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-12 23:43:58.461  INFO 58327 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-05-12 23:43:58.665  INFO 58327 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-12 23:43:58.938  INFO 58327 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-05-12 23:44:00.596  INFO 58327 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-12 23:44:00.611  INFO 58327 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-12 23:44:00.632  INFO 58327 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-12 23:44:01.405  WARN 58327 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-12 23:44:02.197  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/VAADIN/**'] with []
+2021-05-12 23:44:02.198  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/myContext/VAADIN/**'] with []
+2021-05-12 23:44:02.198  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/favicon.ico'] with []
+2021-05-12 23:44:02.198  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/robots.txt'] with []
+2021-05-12 23:44:02.198  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/manifest.webmanifest'] with []
+2021-05-12 23:44:02.199  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/sw.js'] with []
+2021-05-12 23:44:02.199  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/offline-page.html'] with []
+2021-05-12 23:44:02.199  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend/**'] with []
+2021-05-12 23:44:02.200  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-12 23:44:02.200  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es5/**'] with []
+2021-05-12 23:44:02.200  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es6/**'] with []
+2021-05-12 23:44:02.282  INFO 58327 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fb2e991, org.springframework.security.web.context.SecurityContextPersistenceFilter@4feb02a6, org.springframework.security.web.header.HeaderWriterFilter@6412ca75, org.springframework.security.web.authentication.logout.LogoutFilter@6810493f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@732492bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e872cd9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f699a74, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78d41796, org.springframework.security.web.session.SessionManagementFilter@7ffdf2eb, org.springframework.security.web.access.ExceptionTranslationFilter@11ff2e13, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a72cdb0]
+2021-05-12 23:44:04.151  INFO 58327 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-12 23:44:04.169  INFO 58327 --- [restartedMain] com.example.application.Application      : Started Application in 18.981 seconds (JVM running for 19.881)
+2021-05-12 23:44:04.944  INFO 58327 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-12 23:44:04.944  INFO 58327 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-12 23:44:04.948  INFO 58327 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2021-05-12 23:44:05.012  WARN 58327 --- [http-nio-8081-exec-1] c.v.f.s.DeploymentConfigurationFactory   : Found 'webpack.config.js' in the project/working directory. Will use it for webpack dev server.
+2021-05-12 23:44:05.015  INFO 58327 --- [http-nio-8081-exec-1] c.v.f.s.DefaultDeploymentConfiguration   : 
+Vaadin is running in DEBUG MODE.
+When deploying application for production, remember to disable debug features. See more from https://vaadin.com/docs/
+2021-05-12 23:44:06.154  INFO 58327 --- [task-2] dev-webpack                              : Started webpack-dev-server. Time: 7982ms
+2021-05-12 23:49:42.543  INFO 58327 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-12 23:49:42.550  INFO 58327 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-12 23:49:42.551  INFO 58327 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-12 23:49:42.569  INFO 58327 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-05-12 23:49:52.472  INFO 59020 --- [restartedMain] com.example.application.Application      : Starting Application using Java 1.8.0_292 on ayon-laptop with PID 59020 (/home/ayon/Dev/Vaadin/CollabWrite/target/classes started by ayon in /home/ayon/Dev/Vaadin/CollabWrite)
+2021-05-12 23:49:52.478  INFO 59020 --- [restartedMain] com.example.application.Application      : No active profile set, falling back to default profiles: default
+2021-05-12 23:49:52.630  INFO 59020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-12 23:49:52.631  INFO 59020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-12 23:49:54.301  INFO 59020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-12 23:49:54.468  INFO 59020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 4 JPA repository interfaces.
+2021-05-12 23:49:55.731  INFO 59020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-05-12 23:49:55.750  INFO 59020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-12 23:49:55.750  INFO 59020 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-05-12 23:49:55.883  INFO 59020 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-12 23:49:55.883  INFO 59020 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3250 ms
+2021-05-12 23:49:56.179  INFO 59020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-05-12 23:49:57.990  INFO 59020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-05-12 23:49:58.003  INFO 59020 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6411793'
+2021-05-12 23:49:58.269  INFO 59020 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-12 23:50:05.678  INFO 59020 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 7 seconds
+2021-05-12 23:50:05.682  INFO 59020 --- [restartedMain] c.v.f.server.startup.DevModeInitializer  : Starting dev-mode updaters in /home/ayon/Dev/Vaadin/CollabWrite folder.
+2021-05-12 23:50:05.730  INFO 59020 --- [restartedMain] dev-updater                              : Visited 123 classes. Took 25 ms.
+2021-05-12 23:50:05.747  INFO 59020 --- [restartedMain] dev-updater                              : Updated npm /home/ayon/Dev/Vaadin/CollabWrite/package.json.
+2021-05-12 23:50:05.772  INFO 59020 --- [restartedMain] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/ayon/Dev/Vaadin/CollabWrite/node_modules' and the hash in the file '/home/ayon/Dev/Vaadin/CollabWrite/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-12 23:50:05.772  INFO 59020 --- [restartedMain] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-12 23:50:05.797  INFO 59020 --- [restartedMain] dev-updater                              : Visited 15 resources. Took 25 ms.
+2021-05-12 23:50:05.867  INFO 59020 --- [restartedMain] dev-updater                              : Updated /home/ayon/Dev/Vaadin/CollabWrite/target/frontend/generated-flow-imports.js
+2021-05-12 23:50:05.878  INFO 59020 --- [restartedMain] dev-updater                              : Visited 123 classes. Took 9 ms.
+2021-05-12 23:50:05.887  INFO 59020 --- [task-1] dev-updater                              : Updated npm /home/ayon/Dev/Vaadin/CollabWrite/package.json.
+2021-05-12 23:50:05.902  INFO 59020 --- [task-1] dev-updater                              : Skipping `npm install` because the frontend packages are already installed in the folder '/home/ayon/Dev/Vaadin/CollabWrite/node_modules' and the hash in the file '/home/ayon/Dev/Vaadin/CollabWrite/node_modules/.vaadin/vaadin.json' is the same as in 'package.json'
+2021-05-12 23:50:05.902  INFO 59020 --- [task-1] dev-updater                              : Copying frontend resources from jar files ...
+2021-05-12 23:50:05.919  INFO 59020 --- [task-1] dev-updater                              : Visited 15 resources. Took 16 ms.
+2021-05-12 23:50:05.958  INFO 59020 --- [task-1] dev-updater                              : No js modules to update '/home/ayon/Dev/Vaadin/CollabWrite/target/frontend/generated-flow-imports.js' file
+2021-05-12 23:50:05.962  INFO 59020 --- [task-2] dev-webpack                              : Starting webpack-dev-server
+2021-05-12 23:50:06.463  INFO 59020 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-12 23:50:06.539  INFO 59020 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-05-12 23:50:06.754  INFO 59020 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-12 23:50:07.136  INFO 59020 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-05-12 23:50:07.159  INFO 59020 --- [task-2] dev-webpack                              : Running webpack to compile frontend resources. This may take a moment, please stand by...
+2021-05-12 23:50:08.780  INFO 59020 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-12 23:50:08.801  INFO 59020 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-12 23:50:08.828  INFO 59020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-12 23:50:09.492  WARN 59020 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-12 23:50:10.120  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/VAADIN/**'] with []
+2021-05-12 23:50:10.120  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/myContext/VAADIN/**'] with []
+2021-05-12 23:50:10.121  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/favicon.ico'] with []
+2021-05-12 23:50:10.121  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/robots.txt'] with []
+2021-05-12 23:50:10.121  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/manifest.webmanifest'] with []
+2021-05-12 23:50:10.121  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/sw.js'] with []
+2021-05-12 23:50:10.122  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/offline-page.html'] with []
+2021-05-12 23:50:10.122  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend/**'] with []
+2021-05-12 23:50:10.122  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/webjars/**'] with []
+2021-05-12 23:50:10.122  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es5/**'] with []
+2021-05-12 23:50:10.122  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/frontend-es6/**'] with []
+2021-05-12 23:50:10.176  INFO 59020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e965a84, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ae9080a, org.springframework.security.web.header.HeaderWriterFilter@68b4064c, org.springframework.security.web.authentication.logout.LogoutFilter@5efbe9e0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ac0a3e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23efa7de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c8d77e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@61e67f5d, org.springframework.security.web.session.SessionManagementFilter@daf44ba, org.springframework.security.web.access.ExceptionTranslationFilter@9fe0e73, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2edc6113]
+2021-05-12 23:50:11.357  INFO 59020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-05-12 23:50:11.375  INFO 59020 --- [restartedMain] com.example.application.Application      : Started Application in 19.749 seconds (JVM running for 20.624)
+2021-05-12 23:50:12.320  INFO 59020 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-12 23:50:12.321  INFO 59020 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-12 23:50:12.323  INFO 59020 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-05-12 23:50:12.401  WARN 59020 --- [http-nio-8081-exec-1] c.v.f.s.DeploymentConfigurationFactory   : Found 'webpack.config.js' in the project/working directory. Will use it for webpack dev server.
+2021-05-12 23:50:12.404  INFO 59020 --- [http-nio-8081-exec-1] c.v.f.s.DefaultDeploymentConfiguration   : 
+Vaadin is running in DEBUG MODE.
+When deploying application for production, remember to disable debug features. See more from https://vaadin.com/docs/
+2021-05-12 23:50:31.109  INFO 59020 --- [task-2] dev-webpack                              : Started webpack-dev-server. Time: 23953ms
+2021-05-12 23:51:03.040  INFO 59020 --- [http-nio-8081-exec-3] c.vaadin.flow.spring.SpringInstantiator  : The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+2021-05-12 23:51:20.459  INFO 59020 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-12 23:51:20.467  INFO 59020 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-12 23:51:20.469  INFO 59020 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-05-12 23:51:20.498  INFO 59020 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

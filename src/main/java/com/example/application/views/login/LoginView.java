@@ -8,7 +8,7 @@ import com.vaadin.flow.router.*;
 import java.util.Collections;
 
 @Route("login")
-@PageTitle("Login | Tester")
+@PageTitle("Login | CollabWrite")
 public class LoginView extends VerticalLayout implements BeforeEnterObserver {
     LoginForm login = new LoginForm();
 
@@ -23,7 +23,7 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         login.setForgotPasswordButtonVisible(false);
 
         add(
-                new H1("Tester"),
+                new H1("CollabWrite"),
                 login,
                 new RouterLink("Sign Up", SignupView.class)
         );

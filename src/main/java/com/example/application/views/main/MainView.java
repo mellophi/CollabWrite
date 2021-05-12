@@ -38,7 +38,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * The main view is a top-level placeholder for other views.
  */
 
-@PWA(name = "Tester", shortName = "Tester", enableInstallPrompt = false)
+@PWA(name = "CollabWrite", shortName = "CollabWrite", enableInstallPrompt = false)
 @JsModule("./styles/shared-styles.js")
 @CssImport("./views/main/main-view.css")
 public class MainView extends AppLayout {
@@ -95,8 +95,8 @@ public class MainView extends AppLayout {
         HorizontalLayout logoLayout = new HorizontalLayout();
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
-        logoLayout.add(new Image("images/logo.png", "Tester logo"));
-        logoLayout.add(new H1("Tester"));
+        logoLayout.add(new Image("images/logo.png", "CollabWrite logo"));
+        logoLayout.add(new H1("CollabWrite"));
         layout.add(logoLayout, menu);
         return layout;
     }
