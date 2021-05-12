@@ -17,16 +17,17 @@ public class Reflect extends AbstractEntity {
     @Column(name = "post_date")
     private LocalDate postDate = LocalDate.now();
     private int latest_user_id;
-
+    private int upvote;
 
 
     public Reflect() {
     }
 
-    public Reflect(String post, int user_id, int latest_user_id) {
+    public Reflect(String post, int user_id, int latest_user_id,int upvote) {
         this.post = post;
         this.user_id = user_id;
         this.latest_user_id = latest_user_id;
+        this.upvote = upvote;
     }
 
 
@@ -40,8 +41,7 @@ public class Reflect extends AbstractEntity {
         return postDate;
     }
     public int getLatest_user_id() { return latest_user_id; }
-
-
+    public int getUpvote() { return upvote; }
 
     public void setLatest_user_id(int latest_user_id) { this.latest_user_id = latest_user_id; }
     public void setPostDate(LocalDate postDate) {
@@ -53,4 +53,5 @@ public class Reflect extends AbstractEntity {
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
+    public void setUpvote(int upvote) { this.upvote = upvote; }
 }

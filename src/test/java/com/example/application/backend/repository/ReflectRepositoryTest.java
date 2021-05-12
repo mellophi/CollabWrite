@@ -25,7 +25,7 @@ public class ReflectRepositoryTest {
     @Test
     public void testCreatedReflect(){
         User user = entityManager.persist(new User("test", "123"));
-        Reflect reflect = reflectRepository.save(new Reflect("Writing this post for unit-testing", user.getId(), user.getId()));
+        Reflect reflect = reflectRepository.save(new Reflect("Writing this post for unit-testing", user.getId(), user.getId(),0));
         assertThat(reflect).isNotNull();
         assertThat(reflect.getId()).isGreaterThan(0);
     }

@@ -57,7 +57,7 @@ public class SignupView extends VerticalLayout {
             Notification.show("Password not matching");
         }
         else{
-            userService.register(username, password1);
+            userService.register(username, password1, false);
             Notification.show("Registration Successfull");
             UI.getCurrent().navigate(LoginView.class);      // After successful signup redirects to login page
         }

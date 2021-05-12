@@ -58,7 +58,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
 
         userId = reflectService.fetchUserId(user_name);
         if(reflect == null){
-            reflectService.savePost(userId, name.getHtmlValue(), userId);
+            reflectService.savePost(userId, name.getHtmlValue(), userId, 0);
             Notification.show("Post saved successfully!");
         }
         else{

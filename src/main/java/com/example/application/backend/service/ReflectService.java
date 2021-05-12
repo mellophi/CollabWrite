@@ -24,8 +24,8 @@ public class ReflectService {
         this.userRepository = userRepository;
     }
 
-    public void savePost(int user_id, String post, int latest_user_id){
-        reflectRepository.save(new Reflect(post, user_id, latest_user_id));
+    public void savePost(int user_id, String post, int latest_user_id, int upvote){
+        reflectRepository.save(new Reflect(post, user_id, latest_user_id, upvote));
     }
 
     public int fetchUserId(String username) throws UsernameNotFoundException {

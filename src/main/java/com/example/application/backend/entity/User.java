@@ -16,18 +16,34 @@ public class User {
     private String username;
     @Column(name = "password")
     private String password;
+    private boolean upvoted;
 
     public User() {
+    }
+
+    public User(String username, String password, boolean upvoted) {
+        this.username = username;
+        this.password = password;
+        this.upvoted = upvoted;
     }
 
     public User(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
+        this.upvoted = user.isUpvoted();
     }
 
     public int getId() {
         return id;
+    }
+
+    public boolean isUpvoted() {
+        return upvoted;
+    }
+
+    public void setUpvoted(boolean upvoted) {
+        this.upvoted = upvoted;
     }
 
     public void setId(int id) {

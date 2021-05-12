@@ -15,11 +15,21 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void register(String username, String password) {
-        userRepository.save(new User(username, password));
+    public void register(String username, String password, boolean upvoted  ) {
+        userRepository.save(new User(username, password, upvoted));
     }
 
     public String findByUserID(int userid){
         return userRepository.findById(userid).get().getUsername();
+    }
+
+    public boolean isUpvoted(int userId) {
+        return userRepository.findById(userId).get().isUpvoted();
+    }
+
+    public void updateUser(int user_id) {
+        User user = userRepository.findById(user_id).get();
+        user.setUpvoted(true);
+        userRepository.save(user);
     }
 }

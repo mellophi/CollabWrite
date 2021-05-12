@@ -9,6 +9,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
@@ -58,7 +59,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         div.getElement().setProperty("innerHTML", "<h3><strong>Posted by " + userService.findByUserID(post.getUser_id()) + "</h3></strong> latest update by "
                 + userService.findByUserID(post.getLatest_user_id()) + "<hr>"
                 + post.getPost() + "<hr>"
-                + "<p style='font-size : 10px'><em>" + "posted on " + post.getPostDate() + "</em></p>");
+                + "<p style='font-size : 10px'><em>" + "posted on " + post.getPostDate() + " Upvote Count " + post.getUpvote() + "</em></p>");
         div.getStyle().set("padding", "20px");
         RippleClickableCard card = new RippleClickableCard(div);
         Component layout = (layoutNumber == 2 ) ? twoButtonLayout(post.getId()) : threeButtonLayout(post.getId());
@@ -77,6 +78,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         HorizontalLayout layout = new HorizontalLayout();
         Button history = new Button("History");
         Button edit = new Button("Edit");
+        Button upvote = new Button("Like");
         edit.addClickListener(event -> {
             List<String> parameter = new ArrayList<>();
             parameter.add(String.valueOf(post_id));
@@ -92,7 +94,22 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
             queryParameter.put("id", parameter);
            UI.getCurrent().navigate("history", new QueryParameters(queryParameter));
         });
-        layout.add(history, edit);
+
+        upvote.addClickListener(event ->{
+            Reflect reflect = reflectService.findPostById(post_id).get();
+            if(!userService.isUpvoted(reflect.getUser_id())){
+                int upvoteCount = reflect.getUpvote();
+                reflect.setUpvote(++upvoteCount);
+                reflectService.updatePost(reflect);
+                userService.updateUser(reflect.getUser_id());
+                UI.getCurrent().getPage().reload();
+            }
+            else{
+                Notification.show("Already liked the post");
+            }
+
+        });
+        layout.add(history, edit, upvote);
         return layout;
     }
 
