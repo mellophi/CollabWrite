@@ -67,7 +67,8 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
             reflect.get().setLatest_user_id(userId);
             reflect.get().setPostDate(LocalDate.now());
             reflectService.updatePost(reflect.get());
-            notificationService.saveNotification("Post edited!!", reflect.get().getUser_id(), userId, reflect.get().getId());
+            if(reflect.get().getUser_id() != userId)
+                notificationService.saveNotification("Post edited!!", reflect.get().getUser_id(), userId, reflect.get().getId());
             Notification.show("Post updated successfully!");
         }
         UI.getCurrent().navigate(ReflectView.class);

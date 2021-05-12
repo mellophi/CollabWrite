@@ -9,6 +9,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
@@ -39,6 +40,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
     }
 
     public void updateCardList(int postId){
+        Notification.show(""+postId);
         if(postId == -1) {
             posts = reflectService.FindPosts();
             for (Reflect post : posts) {
@@ -102,6 +104,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
                 .getParameters()
                 .getOrDefault("id", Collections.emptyList())
                 .isEmpty()) {
+            removeAll();
             List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
             updateCardList(Integer.parseInt(queryParameters.get(0)));
         }
