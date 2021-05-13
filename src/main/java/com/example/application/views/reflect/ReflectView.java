@@ -39,12 +39,10 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         this.reflectService = reflectService;
         this.userService = userService;
         this.upvotesService = upvotesService;
-//        add(new Text("Content placeholder"));
         updateCardList(-1);
     }
 
     public void updateCardList(int postId){
-//        Notification.show(""+postId);
         if(postId == -1) {
             posts = reflectService.FindPosts();
             for (Reflect post : posts) {
