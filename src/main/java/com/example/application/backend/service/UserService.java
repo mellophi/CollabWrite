@@ -3,6 +3,7 @@ package com.example.application.backend.service;
 import com.example.application.backend.entity.History;
 import com.example.application.backend.entity.User;
 import com.example.application.backend.repository.UserRepository;
+import com.vaadin.flow.component.textfield.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +41,13 @@ public class UserService {
 
     public List<User> findAllUsers() {
         return  userRepository.findAll();
+    }
+
+    public List<User> findAllUsers(String searchText) {
+        if (searchText == null || searchText.isEmpty()) {
+            return userRepository.findAll();
+        } else {
+            return userRepository.search(searchText);
+        }
     }
 }
