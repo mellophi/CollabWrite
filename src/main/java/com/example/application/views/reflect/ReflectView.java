@@ -2,6 +2,7 @@ package com.example.application.views.reflect;
 
 import com.example.application.backend.entity.Reflect;
 import com.example.application.backend.service.ReflectService;
+import com.example.application.backend.service.UpvotesService;
 import com.example.application.backend.service.UserService;
 import com.example.application.views.write.WriteView;
 import com.github.appreciated.card.RippleClickableCard;
@@ -16,6 +17,8 @@ import com.vaadin.flow.router.*;
 import com.example.application.views.main.MainView;
 import com.vaadin.flow.component.dependency.CssImport;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
@@ -30,11 +33,12 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
     private List<Reflect> posts;
     private ReflectService reflectService;
     private UserService userService;
-
-    public ReflectView(ReflectService reflectService, UserService userService) {
+    private UpvotesService upvotesService;
+    public ReflectView(ReflectService reflectService, UserService userService, UpvotesService upvotesService) {
         addClassName("reflect-view");
         this.reflectService = reflectService;
         this.userService = userService;
+        this.upvotesService = upvotesService;
 //        add(new Text("Content placeholder"));
         updateCardList(-1);
     }
@@ -96,16 +100,26 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         });
 
         upvote.addClickListener(event ->{
-            Reflect reflect = reflectService.findPostById(post_id).get();
-            if(!userService.isUpvoted(reflect.getUser_id())){
-                int upvoteCount = reflect.getUpvote();
-                reflect.setUpvote(++upvoteCount);
+            String user_name;
+
+            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();  // get the credentials of logged in user
+            if(principal instanceof UserDetails)
+                user_name = ((UserDetails)principal).getUsername();
+            else
+                user_name = principal.toString();
+
+            if(upvotesService.findPostByIdAndUserId(post_id,reflectService.fetchUserId(user_name)).isEmpty())
+            {
+                Reflect reflect = reflectService.findPostById(post_id).get();
+                int upvotesCount = reflect.getUpvote();
+                reflect.setUpvote(++upvotesCount);
                 reflectService.updatePost(reflect);
-                userService.updateUser(reflect.getUser_id());
+                upvotesService.save(post_id,reflectService.fetchUserId(user_name));
                 UI.getCurrent().getPage().reload();
             }
-            else{
-                Notification.show("Already liked the post");
+            else
+            {
+                Notification.show("Already Liked the post !!");
             }
 
         });
