@@ -78,14 +78,14 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         add(card);
     }
 
-    private Component twoButtonLayout(int post_id) {
+    private Component twoButtonLayout(int postId) {
         HorizontalLayout layout = new HorizontalLayout();
         Button history = new Button("History");
         Button edit = new Button("Edit");
         Button upvote = new Button("Like");
         edit.addClickListener(event -> {
             List<String> parameter = new ArrayList<>();
-            parameter.add(String.valueOf(post_id));
+            parameter.add(String.valueOf(postId));
             Map<String, List<String>> queryParameter = new HashMap<>();
             queryParameter.put("id", parameter);
             UI.getCurrent().navigate("write", new QueryParameters(queryParameter));
@@ -93,7 +93,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
 
         history.addClickListener(event -> {
             List<String> parameter = new ArrayList<>();
-            parameter.add(String.valueOf(post_id));
+            parameter.add(String.valueOf(postId));
             Map<String, List<String>> queryParameter = new HashMap<>();
             queryParameter.put("id", parameter);
            UI.getCurrent().navigate("history", new QueryParameters(queryParameter));
@@ -108,33 +108,29 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
             else
                 user_name = principal.toString();
 
-            if(upvotesService.findPostByIdAndUserId(post_id,reflectService.fetchUserId(user_name)).isEmpty())
-            {
-                Reflect reflect = reflectService.findPostById(post_id).get();
+            if(upvotesService.findPostByIdAndUserId(postId,reflectService.fetchUserId(user_name)).isEmpty()) {
+                Reflect reflect = reflectService.findPostById(postId).get();
                 int upvotesCount = reflect.getUpvote();
                 reflect.setUpvote(++upvotesCount);
                 reflectService.updatePost(reflect);
-                upvotesService.save(post_id,reflectService.fetchUserId(user_name));
+                upvotesService.save(postId,reflectService.fetchUserId(user_name));
                 UI.getCurrent().getPage().reload();
             }
             else
-            {
                 Notification.show("Already Liked the post !!");
-            }
-
         });
         layout.add(history, edit, upvote);
         return layout;
     }
 
-    private Component threeButtonLayout(int post_id) {
+    private Component threeButtonLayout(int postId) {
         HorizontalLayout layout = new HorizontalLayout();
         Button history = new Button("History");
         Button edit = new Button("Edit");
         Button ok = new Button("OK");
         edit.addClickListener(event -> {
             List<String> parameter = new ArrayList<>();
-            parameter.add(String.valueOf(post_id));
+            parameter.add(String.valueOf(postId));
             Map<String, List<String>> queryParameter = new HashMap<>();
             queryParameter.put("id", parameter);
             UI.getCurrent().navigate("write", new QueryParameters(queryParameter));
@@ -142,7 +138,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
 
         history.addClickListener(event -> {
             List<String> parameter = new ArrayList<>();
-            parameter.add(String.valueOf(post_id));
+            parameter.add(String.valueOf(postId));
             Map<String, List<String>> queryParameter = new HashMap<>();
             queryParameter.put("id", parameter);
             UI.getCurrent().navigate("history", new QueryParameters(queryParameter));
