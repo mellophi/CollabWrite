@@ -2,6 +2,7 @@ package com.example.application.views.notification;
 
 import com.example.application.backend.entity.Notification;
 import com.example.application.backend.entity.Reflect;
+import com.example.application.backend.service.FriendService;
 import com.example.application.backend.service.NotificationService;
 import com.example.application.backend.service.ReflectService;
 import com.example.application.backend.service.UserService;
@@ -37,12 +38,14 @@ public class NotificationView extends VerticalLayout {
     private NotificationService notificationService;
     private UserService userService;
     private ReflectService reflectService;
+    private FriendService friendService;
 
-    public NotificationView(NotificationService notificationService,ReflectService reflectService,UserService userService) {
+    public NotificationView(NotificationService notificationService,ReflectService reflectService,UserService userService, FriendService friendService) {
         addClassName("reflect-view");
         this.notificationService = notificationService;
         this.reflectService = reflectService;
         this.userService = userService;
+        this.friendService = friendService;
         updateCardList();
     }
 
@@ -62,7 +65,7 @@ public class NotificationView extends VerticalLayout {
         {
             String notifiedByUserName = userService.findByUserID(notification.getNotifiedByUserId());
             RippleClickableCard card = new RippleClickableCard(new Item("Notified By " + notifiedByUserName , notification.getText()));
-            Component layout = buttonLayout(notification.getPostId(), notification);
+            Component layout = (notification.getPostId() == -2)? friendButtonLayout(notification.getPostId(), notification) : editButtonLayout(notification.getPostId(), notification);
             layout.setVisible(false);
             card.addClickListener(event -> {
                 if(layout.isVisible())
@@ -77,7 +80,7 @@ public class NotificationView extends VerticalLayout {
 
 
 
-    private Component buttonLayout(int postId, Notification notification) {
+    private Component editButtonLayout(int postId, Notification notification) {
         HorizontalLayout layout = new HorizontalLayout();
         Button viewPost = new Button("View Post");
         Button ok = new Button("OK");
@@ -95,6 +98,24 @@ public class NotificationView extends VerticalLayout {
             UI.getCurrent().getPage().reload();
         });
         layout.add(viewPost, ok);
+        return layout;
+    }
+
+    private Component friendButtonLayout(int postId, Notification notification) {
+        HorizontalLayout layout = new HorizontalLayout();
+        Button acceptFriend = new Button("Accept Request");
+        Button rejectFriend = new Button("Reject Request");
+        acceptFriend.addClickListener(event -> {
+            friendService.addFriend(notification.getNotifiedUserId(),notification.getNotifiedByUserId());
+            UI.getCurrent().navigate("friend" );
+            notificationService.deleteNotification(notification);
+        });
+
+        rejectFriend.addClickListener(event -> {
+            notificationService.deleteNotification(notification);
+            UI.getCurrent().getPage().reload();
+        });
+        layout.add(acceptFriend, rejectFriend);
         return layout;
     }
 

@@ -39,4 +39,8 @@ public class FriendService {
         }
         return flag;
     }
+
+    public void addFriend(int notifiedUserId, int notifiedByUserId) {
+        friendRepository.save(new Friend(notifiedUserId,notifiedByUserId));
+    }
 }

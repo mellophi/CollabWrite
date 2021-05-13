@@ -68,7 +68,8 @@ public class FriendView extends VerticalLayout {
     }
 
     private void sendFriendRequest(User user) {
-        notificationService.saveNotification("Friend Request Incoming", reflectService.fetchUserId(username), user.getId(), -2);
+        notificationService.saveNotification("Friend Request Incoming", user.getId(), reflectService.fetchUserId(username), -2);
+        Notification.show("Friend reques sent successfully !!");
     }
 
     private void configureFilter() {
