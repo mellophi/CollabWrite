@@ -2,9 +2,7 @@ package com.example.application.views.friend;
 
 import com.example.application.backend.entity.History;
 import com.example.application.backend.entity.User;
-import com.example.application.backend.service.FriendService;
-import com.example.application.backend.service.HistoryService;
-import com.example.application.backend.service.UserService;
+import com.example.application.backend.service.*;
 import com.example.application.views.main.MainView;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
@@ -14,6 +12,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.*;
 import org.jsoup.Jsoup;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,16 +24,51 @@ public class FriendView extends VerticalLayout {
     Grid<User> grid = new Grid<>(User.class);
     private TextField searchText = new TextField();
 
+    private String username;
+    private ReflectService reflectService;
     private FriendService friendService;
     private UserService userService;
-    public FriendView(FriendService friendService, UserService userService){
+    private NotificationService notificationService;
+
+    public FriendView(ReflectService reflectService, FriendService friendService, UserService userService, NotificationService notificationService){
+        this.reflectService = reflectService;
         this.friendService = friendService;
         this.userService = userService;
+        this.notificationService = notificationService;
+        Object principle = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principle instanceof UserDetails)
+            username = ((UserDetails)principle).getUsername();
+        else
+            username = principle.toString();
         setSizeFull();
         configureFilter();
+        configureGrid();
         updateList();
         add(searchText, grid);
 
+    }
+
+    private void configureGrid() {
+        grid.setSizeFull();
+        grid.removeColumnByKey("id");
+        grid.setColumns("username");
+
+        grid.addColumn(user -> {
+            String friendList = "";
+            List<String> friends = friendService.findFriends(username);
+            for(String friend : friends) friendList += friend + "\n";
+            return friendList == "" ? "No friends added" : friendList;
+        }).setHeader("Friends Added");
+
+        grid.addColumn(user -> {
+            return friendService.checkFriends(username, user.getId()) ? "Friends" : "Not friends";
+        }).setHeader("Status");
+
+        grid.asSingleSelect().addValueChangeListener(event -> sendFriendRequest(event.getValue()));
+    }
+
+    private void sendFriendRequest(User user) {
+        notificationService.saveNotification("Friend Request Incoming", reflectService.fetchUserId(username), user.getId(), -2);
     }
 
     private void configureFilter() {
