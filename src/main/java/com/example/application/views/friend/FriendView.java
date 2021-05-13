@@ -54,13 +54,6 @@ public class FriendView extends VerticalLayout {
         grid.setColumns("username");
 
         grid.addColumn(user -> {
-            String friendList = "";
-            List<String> friends = friendService.findFriends(username);
-            for(String friend : friends) friendList += friend + "\n";
-            return friendList == "" ? "No friends added" : friendList;
-        }).setHeader("Friends Added");
-
-        grid.addColumn(user -> {
             return friendService.checkFriends(username, user.getId()) ? "Friends" : "Not friends";
         }).setHeader("Status");
 
@@ -69,7 +62,7 @@ public class FriendView extends VerticalLayout {
 
     private void sendFriendRequest(User user) {
         notificationService.saveNotification("Friend Request Incoming", user.getId(), reflectService.fetchUserId(username), -2);
-        Notification.show("Friend reques sent successfully !!");
+        Notification.show("Friend request sent successfully !!");
     }
 
     private void configureFilter() {
@@ -81,7 +74,7 @@ public class FriendView extends VerticalLayout {
 
 
     private void updateList(){
-        grid.setItems(userService.findAllUsers(searchText.getValue()));
+        grid.setItems(userService.findAllUsers(searchText.getValue(), username));
     }
 
 

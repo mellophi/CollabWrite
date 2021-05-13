@@ -1,6 +1,7 @@
 package com.example.application.views.reflect;
 
 import com.example.application.backend.entity.Reflect;
+import com.example.application.backend.service.FriendService;
 import com.example.application.backend.service.ReflectService;
 import com.example.application.backend.service.UpvotesService;
 import com.example.application.backend.service.UserService;
@@ -34,11 +35,24 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
     private ReflectService reflectService;
     private UserService userService;
     private UpvotesService upvotesService;
-    public ReflectView(ReflectService reflectService, UserService userService, UpvotesService upvotesService) {
+    private FriendService friendService;
+    private String username;
+
+    public ReflectView(ReflectService reflectService, UserService userService, UpvotesService upvotesService, FriendService friendService) {
+        this.friendService = friendService;
         addClassName("reflect-view");
         this.reflectService = reflectService;
         this.userService = userService;
         this.upvotesService = upvotesService;
+
+
+
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();  // get the credentials of logged in user
+        if(principal instanceof UserDetails)
+            username = ((UserDetails)principal).getUsername();
+        else
+            username = principal.toString();
+
         updateCardList(-1);
     }
 
@@ -46,7 +60,8 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         if(postId == -1) {
             posts = reflectService.FindPosts();
             for (Reflect post : posts) {
-                configureCardList(post, 2);
+                if(friendService.checkFriends(username, post.getLatest_user_id()) || reflectService.fetchUserId(username) == post.getLatest_user_id())
+                    configureCardList(post, 2);
             }
         }
         else {
@@ -98,20 +113,14 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         });
 
         upvote.addClickListener(event ->{
-            String user_name;
 
-            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();  // get the credentials of logged in user
-            if(principal instanceof UserDetails)
-                user_name = ((UserDetails)principal).getUsername();
-            else
-                user_name = principal.toString();
 
-            if(upvotesService.findPostByIdAndUserId(postId,reflectService.fetchUserId(user_name)).isEmpty()) {
+            if(upvotesService.findPostByIdAndUserId(postId,reflectService.fetchUserId(username)).isEmpty()) {
                 Reflect reflect = reflectService.findPostById(postId).get();
                 int upvotesCount = reflect.getUpvote();
                 reflect.setUpvote(++upvotesCount);
                 reflectService.updatePost(reflect);
-                upvotesService.save(postId,reflectService.fetchUserId(user_name));
+                upvotesService.save(postId,reflectService.fetchUserId(username));
                 UI.getCurrent().getPage().reload();
             }
             else

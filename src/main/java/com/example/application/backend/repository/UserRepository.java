@@ -15,4 +15,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("select c from User c " +
             "where lower(c.username) like lower(concat('%', :searchTerm, '%')) ")
     List<User> search(@Param("searchTerm") String searchTerm);
+
+    @Query(value = "select * from user where username <> ?1", nativeQuery = true)
+    List<User> findAllExceptUsernameLoggedIn(String username);
 }

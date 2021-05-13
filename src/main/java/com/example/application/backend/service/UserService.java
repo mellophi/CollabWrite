@@ -32,9 +32,9 @@ public class UserService {
         return  userRepository.findAll();
     }
 
-    public List<User> findAllUsers(String searchText) {
+    public List<User> findAllUsers(String searchText, String username) {
         if (searchText == null || searchText.isEmpty()) {
-            return userRepository.findAll();
+            return userRepository.findAllExceptUsernameLoggedIn(username);
         } else {
             return userRepository.search(searchText);
         }

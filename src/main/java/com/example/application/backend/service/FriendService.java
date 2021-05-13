@@ -30,9 +30,10 @@ public class FriendService {
 
     public boolean checkFriends(String username, int friendId) {
         boolean flag = false;
-        List<Friend> friends = friendRepository.findAllByUserId(reflectService.fetchUserId(username));
+        int userId = reflectService.fetchUserId(username);
+        List<Friend> friends = friendRepository.findAll();
         for(Friend friend : friends){
-            if(friend.getFriendId() == friendId){
+            if((friend.getFriendId() == friendId && friend.getUserId() == userId) || (friend.getUserId() == friendId && friend.getFriendId() == userId)){
                 flag = true;
                 break;
             }
