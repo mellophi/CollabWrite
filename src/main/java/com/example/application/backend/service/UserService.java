@@ -1,9 +1,13 @@
 package com.example.application.backend.service;
 
+import com.example.application.backend.entity.History;
 import com.example.application.backend.entity.User;
 import com.example.application.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 public class UserService {
@@ -31,5 +35,10 @@ public class UserService {
         User user = userRepository.findById(user_id).get();
         user.setUpvoted(true);
         userRepository.save(user);
+    }
+
+
+    public List<User> findAllUsers() {
+        return  userRepository.findAll();
     }
 }

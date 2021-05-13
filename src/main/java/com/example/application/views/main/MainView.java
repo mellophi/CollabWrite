@@ -111,7 +111,12 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        return new Tab[]{createTab("Write", WriteView.class), createTab("Reflect", ReflectView.class), createTab("Notifications", NotificationView.class)};
+        return new Tab[]{
+                createTab("Write", WriteView.class),
+                createTab("Reflect", ReflectView.class),
+                createTab("Notifications", NotificationView.class),
+                createTab("Friends",FriendView.class)
+        };
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
