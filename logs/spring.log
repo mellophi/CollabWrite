@@ -8409,3 +8409,7 @@ Caused by: java.lang.IllegalArgumentException: Can't resolve property name 'user
 2021-05-13 18:11:34.926  INFO 13834 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
 2021-05-13 18:11:34.942  WARN 13834 --- [http-nio-8081-exec-1] c.v.f.s.DeploymentConfigurationFactory   : Found 'webpack.config.js' in the project/working directory. Will use it for webpack dev server.
 2021-05-13 18:12:32.500  WARN 13834 --- [Catalina-utility-1] com.vaadin.flow.server.VaadinSession     : A VaadinSession instance not associated to any service is getting unbound. Session destroy events will not be fired and UIs in the session will not get detached. This might happen if a session is deserialized but never used before it expires.
+2021-05-13 19:36:08.924  INFO 13834 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-05-13 19:36:08.925  INFO 13834 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-13 19:36:08.926  INFO 13834 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-05-13 19:36:08.929  INFO 13834 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
