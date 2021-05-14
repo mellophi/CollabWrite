@@ -13,7 +13,10 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.regex.Pattern;
 
 
 @Route("sign-up")
@@ -42,11 +45,26 @@ public class SignupView extends VerticalLayout {
                     username.getValue(),
                     password1.getValue(),
                     password2.getValue()
-            ))
+            )),
+            new RouterLink("Log in", LoginView.class)
         );
     }
 
+    private boolean specialCharacterChecker(String password){
+        boolean flag = false;
+        Pattern regex = Pattern.compile("[^A-Za-z0-9]");
+        for(int i = 0; i<password.length(); i++){
+            char ch = password.charAt(i);
+            if(regex.matcher("" + ch ).matches()){
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
     private void signup(String username, String password1, String password2) {
+        Pattern regex = Pattern.compile("[^A-Za-z0-9]");
         if(username.trim().isEmpty()){
             Notification.show("Enter Username");
         }
@@ -56,10 +74,15 @@ public class SignupView extends VerticalLayout {
         else if(!password1.equals(password2)){
             Notification.show("Password not matching");
         }
+        else if(password1.length()<8 || !specialCharacterChecker(password1)){
+            Notification.show("Please enter at least 8 character including one special character!");
+        }
         else{
-            userService.register(username, password1);
-            Notification.show("Registration Successfull");
-            UI.getCurrent().navigate(LoginView.class);      // After successful signup redirects to login page
+            if(userService.register(username, password1)){
+                Notification.show("Registration Successfull");
+                UI.getCurrent().navigate(LoginView.class);      // After successful signup redirects to login page
+            }
+            else Notification.show("Username already exists!!");
         }
     }
 }

@@ -3,6 +3,7 @@ package com.example.application.backend.service;
 import com.example.application.backend.entity.History;
 import com.example.application.backend.entity.User;
 import com.example.application.backend.repository.UserRepository;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.textfield.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,15 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void register(String username, String password ) {
-        userRepository.save(new User(username, password));
+    public boolean register(String username, String password ) {
+        if(userRepository.findByUsername(username).isPresent()){
+            return false;
+        }
+        else {
+            userRepository.save(new User(username, password));
+            return true;
+        }
+
     }
 
     public String findByUserID(int userid){
