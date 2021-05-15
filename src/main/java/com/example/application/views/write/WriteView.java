@@ -29,7 +29,7 @@ import java.util.Optional;
 @Component
 public class WriteView extends VerticalLayout implements BeforeEnterObserver {
 
-    private TextArea name;
+    private RichTextEditor name;
     private Button sayHello;
     private String user_name;
     private int userId;
@@ -43,7 +43,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
         this.reflectService = reflectService;
         this.historyService = historyService;
         this.notificationService = notificationService;
-        name = new TextArea();
+        name = new RichTextEditor();
         name.setSizeFull();
         sayHello = new Button("Submit post");
         add(name, sayHello);
@@ -59,7 +59,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
 
         userId = reflectService.fetchUserId(user_name);
         if(reflect == null){
-            reflectService.savePost(userId, name.getValue(), userId, 0);
+            reflectService.savePost(userId, name.asHtml().getValue(), userId, 0);
             Notification.show("Post saved successfully!");
         }
         else{
@@ -84,7 +84,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
                 .isEmpty()){
             List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
             reflect = reflectService.findPostById(Integer.parseInt(queryParameters.get(0)));
-            name.setValue(reflect.get().getPost());
+            name.asHtml().setValue(reflect.get().getPost());
         }
 
     }
