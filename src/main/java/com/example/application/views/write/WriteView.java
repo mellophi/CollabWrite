@@ -64,7 +64,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
         }
         else{
             historyService.saveHistory(reflect.get().getPostDate(), reflect.get().getPost(), userId, reflect.get().getId());
-            reflect.get().setPost(name.getValue());
+            reflect.get().setPost(name.asHtml().getValue());
             reflect.get().setLatest_user_id(userId);
             reflect.get().setPostDate(LocalDate.now());
             reflectService.updatePost(reflect.get());

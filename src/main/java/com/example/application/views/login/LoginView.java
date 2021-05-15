@@ -8,6 +8,7 @@ import com.vaadin.flow.router.*;
 import java.util.Collections;
 
 @Route("login")
+@RouteAlias("")
 @PageTitle("Login | CollabWrite")
 public class LoginView extends VerticalLayout implements BeforeEnterObserver {
     LoginForm login = new LoginForm();
