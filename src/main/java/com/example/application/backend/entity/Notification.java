@@ -3,8 +3,10 @@ package com.example.application.backend.entity;
 import com.example.application.backend.AbstractEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "notification")
 public class Notification extends AbstractEntity {
     private String text;
     private int notifiedUserId;

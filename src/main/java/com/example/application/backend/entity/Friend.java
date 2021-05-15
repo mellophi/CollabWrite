@@ -3,8 +3,10 @@ package com.example.application.backend.entity;
 import com.example.application.backend.AbstractEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "friend")
 public class Friend extends AbstractEntity {
     private int userId;
     private int friendId;

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UpvotesRepository extends JpaRepository<Upvotes,Integer> {
-    List<Upvotes> findAllByPostId(int post_id);
+    List<Upvotes> findAllByPostId(int post_id); //question
     @Query(value = "select * from upvotes where post_id = ?1 and user_id = ?2" , nativeQuery = true)
     List<Upvotes> findByPostIdAndUserId(int post_id, int userId);
 }

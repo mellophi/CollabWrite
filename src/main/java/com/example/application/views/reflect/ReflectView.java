@@ -60,7 +60,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         if(postId == -1) {
             posts = reflectService.FindPosts();
             for (Reflect post : posts) {
-                if(friendService.checkFriends(username, post.getLatest_user_id()) || reflectService.fetchUserId(username) == post.getLatest_user_id())
+                if(friendService.checkFriends(username, post.getUser_id()) || reflectService.fetchUserId(username) == post.getUser_id())
                     configureCardList(post, 2);
             }
         }
@@ -113,8 +113,6 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
         });
 
         upvote.addClickListener(event ->{
-
-
             if(upvotesService.findPostByIdAndUserId(postId,reflectService.fetchUserId(username)).isEmpty()) {
                 Reflect reflect = reflectService.findPostById(postId).get();
                 int upvotesCount = reflect.getUpvote();
@@ -173,7 +171,7 @@ public class ReflectView extends VerticalLayout implements BeforeEnterObserver {
                 .isEmpty()) {
             removeAll();
             List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
-            updateCardList(Integer.parseInt(queryParameters.get(0)));
+            updateCardList(Integer.parseInt(queryParameters.get(0))); // sending the postId
         }
     }
 }

@@ -45,7 +45,7 @@ public class MainView extends AppLayout {
 
     private  String username;
     private final Tabs menu;
-    private H1 viewTitle;
+    private H1 viewTitle; //question
 
     public MainView() {
         setPrimarySection(Section.DRAWER);
@@ -62,7 +62,7 @@ public class MainView extends AppLayout {
         layout.setSpacing(false);
         layout.setAlignItems(FlexComponent.Alignment.CENTER);
         layout.add(new DrawerToggle());
-        viewTitle = new H1();
+        viewTitle = new H1(); //question
         layout.add(viewTitle);
 
         //Retrieving information about the current logged in user using spring security
@@ -71,9 +71,10 @@ public class MainView extends AppLayout {
             username = ((UserDetails)principal).getUsername();
         else
             username = principal.toString();
+
         layout.add(new Avatar(username));
 
-        layout.add(new Anchor("/logout", "Logout"));
+        layout.add(new Anchor("/logout", "Logout"));    //question
         return layout;
     }
 

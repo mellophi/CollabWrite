@@ -27,6 +27,7 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
                 login,
                 new RouterLink("Sign Up", SignupView.class)
         );
+
     }
 
     @Override

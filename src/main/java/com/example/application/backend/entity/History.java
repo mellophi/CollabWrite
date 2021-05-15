@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "history")
 public class History extends AbstractEntity {
 
     private LocalDate postDate;
