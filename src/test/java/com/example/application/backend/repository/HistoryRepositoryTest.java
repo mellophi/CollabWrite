@@ -25,7 +25,7 @@ public class HistoryRepositoryTest {
     private HistoryRepository historyRepository;
 
     @Test
-    public void testCreatedReflect(){
+    public void testCreatedHistory(){
         User user1 = entityManager.persist(new User("test1", "123"));
         User user2 = entityManager.persist(new User("test2", "123"));
         Reflect reflect = entityManager.persist(new Reflect("Writing this post for unit-testing", user1.getId(), user2.getId(),0));
