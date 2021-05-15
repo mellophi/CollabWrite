@@ -1,43 +1,59 @@
-# Tester
+# CollabWrite
 
-This is an example project that can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+CollabWrite enables many users to write poems, stories, events, songs etc.collaboratively. It can be used by anyone to share their creation or thoughts in a social media kind of platform where other users can also contribute to his/her thoughts.Due to its collaborative feature, our project will provide the right platform for the writers, music composers etc. to do their job in a more effective manner and with better user experience.
 
-The project is a standard Maven project, so you can import it to your IDE of choice. [Read more how to set up a development environment](https://vaadin.com/docs/v14/flow/installing/installing-overview.html) for Vaadin projects (Windows, Linux, macOS). 
 
-This project was created from https://start.vaadin.com.
+## Features:
 
-## Running and debugging the application
+- User registration and login.
+- Users can write about anything.
+- Users can decide whether to make it collaborative or not.
+- User can see his/her posts and posts where he/she is collaborating.
+- Searching anyone’s post.
 
-### Running the application from the command line.
-To run from the command line, use `mvn` and open http://localhost:8080 in your browser.
 
-### Running and debugging the application in Intellij IDEA
-- Locate the Application.java class in the Project view. It is in the src folder, under the main package's root.
-- Right-click on the Application class
-- Select "Debug 'Application.main()'" from the list
+## Tools:
 
-After the application has started, you can view it at http://localhost:8080/ in your browser. 
-You can now also attach breakpoints in code for debugging purposes, by clicking next to a line number in any source file.
+The front end of the project is handled by “Vaadin” Framework. The middle layer is built on “SpringBoot” Framework and it communicates with the MySQL database in the back-end.
 
-### Running and debugging the application in Eclipse
-- Locate the Application.java class in the Package Explorer. It is in `src/main/java`, under the main package.
-- Right-click on the file and select `Debug As` --> `Java Application`.
+Our project also uses DevOps software development methodology to automate the stages of application development lifecycle, i.e., development, testing, deployment, and monitoring. 
 
-Do not worry if the debugger breaks at a `SilentExitException`. This is a Spring Boot feature and happens on every startup.
+The various DevOps tools used in this project are listed below:
+- Continuous Development (SCM): GitHub
+- Continuous Build: Maven
+- Continuous Testing: JUnit
+- Continuous Integration: Jenkins
+- Containerization: Dockerfile
+- Continuous Deployment: Ansible
+- Continuous Monitoring: Elasticsearch-Logstash-Kibana
 
-After the application has started, you can view it at http://localhost:8080/ in your browser.
-You can now also attach breakpoints in code for debugging purposes, by clicking next to a line number in any source file.
-## Project structure
 
-- `MainView.java` in `src/main/java` contains the navigation setup. It uses [App Layout](https://vaadin.com/components/vaadin-app-layout).
-- `views` package in `src/main/java` contains the server-side Java views of your application.
-- `views` folder in `frontend/` contains the client-side JavaScript views of your application.
+## Install:
 
-## What next?
+### Docker Image:
 
-[vaadin.com](https://vaadin.com) has lots of material to help you get you started:
+The docker image is available in [Docker Hub](https://hub.docker.com/repository/docker/spefinalproject/collabwrite)
 
-- Follow the tutorials in [vaadin.com/tutorials](https://vaadin.com/tutorials). Especially [vaadin.com/tutorials/getting-started-with-flow](https://vaadin.com/tutorials/getting-started-with-flow) is good for getting a grasp of the basic Vaadin concepts.
-- Read the documentation in [vaadin.com/docs](https://vaadin.com/docs).
-- For a bigger Vaadin application example, check out the Full Stack App starter from [vaadin.com/start](https://vaadin.com/start).
+To try out the CollabWrite container run the following command.
+
+    docker run -it 8081:8081 spefinalprojecet/tester:latest
+
+### Run it Locally:
+
+-Installing openjdk 11 in Ubuntu
+
+		$ sudo apt-get install openjdk-11-jdk
+
+-Installing maven in Ubuntu
+
+		$ sudo apt update
+		$ sudo apt install maven
+
+-Build the JAR file for the project
+		
+		mvn clean install -Pproduction
+
+-Run the JAR file
+		
+		java -jar target/collabwrite-1.0-SNAPSHOT.jar 
+
