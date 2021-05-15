@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @TestPropertySource(locations = "classpath:test.properties")
 public class ReflectRepositoryTest {
 
+
     @Autowired
     private TestEntityManager entityManager;
 
