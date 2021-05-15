@@ -10,6 +10,9 @@ CollabWrite enables many users to write poems, stories, events, songs etc.collab
 - Users can decide whether to make it collaborative or not.
 - User can see his/her posts and posts where he/she is collaborating.
 - Searching anyone’s post.
+- Sending friend requests
+- Upvoting posts
+- Notification for friend requests and post modification
 
 
 ## Tools:
