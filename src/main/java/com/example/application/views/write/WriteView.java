@@ -29,7 +29,7 @@ import java.util.Optional;
 @Component
 public class WriteView extends VerticalLayout implements BeforeEnterObserver {
 
-    private RichTextEditor name;
+    private TextArea name;
     private Button sayHello;
     private String user_name;
     private int userId;
@@ -43,7 +43,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
         this.reflectService = reflectService;
         this.historyService = historyService;
         this.notificationService = notificationService;
-        name = new RichTextEditor();
+        name = new TextArea();
         name.setSizeFull();
         sayHello = new Button("Submit post");
         add(name, sayHello);
@@ -59,12 +59,12 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
 
         userId = reflectService.fetchUserId(user_name);
         if(reflect == null){
-            reflectService.savePost(userId, name.asHtml().getValue(), userId, 0);
+            reflectService.savePost(userId, name.getValue(), userId, 0);
             Notification.show("Post saved successfully!");
         }
         else{
             historyService.saveHistory(reflect.get().getPostDate(), reflect.get().getPost(), userId, reflect.get().getId());
-            reflect.get().setPost(name.asHtml().getValue());
+            reflect.get().setPost(name.getValue());
             reflect.get().setLatest_user_id(userId);
             reflect.get().setPostDate(LocalDate.now());
             reflectService.updatePost(reflect.get());
@@ -84,7 +84,7 @@ public class WriteView extends VerticalLayout implements BeforeEnterObserver {
                 .isEmpty()){
             List<String> queryParameters = beforeEnterEvent.getLocation().getQueryParameters().getParameters().get("id");
             reflect = reflectService.findPostById(Integer.parseInt(queryParameters.get(0)));
-            name.asHtml().setValue(reflect.get().getPost());
+            name.setValue(reflect.get().getPost());
         }
 
     }
