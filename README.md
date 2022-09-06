@@ -1,6 +1,6 @@
 # CollabWrite
 
-CollabWrite enables many users to write poems, stories, events, songs etc.collaboratively. It can be used by anyone to share their creation or thoughts in a social media kind of platform where other users can also contribute to his/her thoughts.Due to its collaborative feature, our project will provide the right platform for the writers, music composers etc. to do their job in a more effective manner and with better user experience.
+CollabWrite enables many users to write poems, stories, events, songs etc. collaboratively. It can be used by anyone to share their creation or thoughts in a social media kind of platform where other users can also contribute to his/her thoughts.Due to its collaborative feature, our project will provide the right platform for the writers, music composers etc. to do their job in a more effective manner and with better user experience.
 
 
 ## Features:
